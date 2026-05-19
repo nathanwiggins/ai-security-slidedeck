@@ -14,16 +14,15 @@
       overflow: hidden;
       width: 100vw;
       height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     /* ── Scaling wrapper ──────────────────────────────────────────── */
     #stage {
       width: 1920px;
       height: 1080px;
-      position: relative;
+      position: fixed;
+      top: 50%;
+      left: 50%;
       transform-origin: center center;
       overflow: hidden;
     }
@@ -977,7 +976,7 @@
     const sx = window.innerWidth  / 1920;
     const sy = window.innerHeight / 1080;
     const s  = Math.min(sx, sy);
-    stage.style.transform = `scale(${s})`;
+    stage.style.transform = `translate(-50%, -50%) scale(${s})`;
   }
 
   window.addEventListener('resize', scaleStage);
