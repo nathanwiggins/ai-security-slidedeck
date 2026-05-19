@@ -9,13 +9,12 @@ Hosted on GitHub Pages at: **[your-github-pages-url]**
 
 | # | Section | Slides |
 |---|---------|--------|
-| 01 | Introduction | AI basics, use cases in research administration, audience poll |
-| 02 | Model Training | How LLMs learn, training data risks, guidance for administrators |
-| 03 | Prompt Injection | Attack types, real-world scenarios, audience poll |
-| 04 | Risk Classification | NIST/OWASP frameworks, data sensitivity table, mitigation strategies, audience poll |
-| 05 | Q&A | Key takeaways, thank-you slide |
+| — | Introduction | Title slide, presenter bios, presentation overview |
+| 01 | AI Model Training | *(coming soon)* |
+| 02 | Malicious Attacks | *(coming soon)* |
+| 03 | Risk Classification | *(coming soon)* |
 
-**Total:** 24 slides
+**Total:** 3 slides (in progress)
 
 ---
 
@@ -23,34 +22,19 @@ Hosted on GitHub Pages at: **[your-github-pages-url]**
 
 | Input | Action |
 |-------|--------|
-| `→` / `↓` / `Space` | Next slide (or reveal next bullet point) |
+| `→` / `↓` / `Space` | Next slide |
 | `←` / `↑` | Previous slide |
 | `Home` / `End` | Jump to first / last slide |
-| Click agenda items | Jump to that section |
-| Section dots (right edge) | Jump to section start |
 | Swipe left / right | Next / previous (touch devices) |
 
-Bullet points on content slides reveal one at a time with `Space` or `→` before the slide advances.
-
 ---
 
-## Interactive Polls
-
-Three audience poll slides are included (slides 6, 15, and 21). Each poll tallies clicks in real time on the presenter's display. For live audience participation from participant devices, link each poll slide to an external service:
-
-- [Mentimeter](https://www.mentimeter.com) — recommended for live word clouds and ranked polls
-- [Poll Everywhere](https://www.polleverywhere.com) — integrates well with presenter displays
-- [Slido](https://www.slido.com) — good for Q&A queues alongside polls
-
-Add a QR code image to the poll slides by placing a PNG in the repo and referencing it in `index.html`.
-
----
 
 ## Customization
 
 **To add or edit slide content**, open `index.html`. Each slide is a `<div class="slide ...">` block. Bullet lists with `data-reveal` on the `<ul>` element will reveal one item at a time during the presentation.
 
-**To update presenter information**, search for `[Presenter Name]`, `[Email Address]`, `[Institution]`, and `[Your GitHub Pages URL]` in `index.html` and replace with real values.
+**To swap in real presenter photos**, find the `.photo-circle` div for each presenter in `index.html` and replace it with `<img src="your-photo.jpg" class="photo-circle" style="object-fit:cover;" />`.
 
 **Fonts:** Arial throughout. No external font dependencies.
 
