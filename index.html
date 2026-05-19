@@ -22,7 +22,7 @@
     /* ── Scaling wrapper ──────────────────────────────────────────── */
     #stage {
       width: 1920px;
-      height: 1080px;
+      height: 1081px; /* exact ratio of 6000×3378 source PNGs (1000:563) */
       position: relative;
       transform-origin: center center;
       overflow: hidden;
@@ -53,16 +53,16 @@
     }
 
     /* ── Background themes ────────────────────────────────────────── */
-    .bg-title    { background-image: url('Title%20Slide.png'); }
-    .bg-template { background-image: url('Slide%20Template.png'); }
+    .bg-title    { background-image: url('Title%20Slide%20Version%202.png'); }
+    .bg-template { background-image: url('Slide%20Template%20Version%202.png'); }
 
     /* ── Content area (safe zone inside template) ─────────────────── */
     .content {
       position: absolute;
-      top:    118px;   /* clears the top-right logo */
+      top:    152px;   /* clears the Version 2 logo block (~14% of 1081px) */
       left:   96px;
       right:  96px;
-      bottom: 296px;   /* clears the NYC skyline */
+      bottom: 395px;   /* clears the Version 2 skyline (peaks begin ~64% from top) */
       display: flex;
       flex-direction: column;
     }
@@ -975,7 +975,7 @@
 
   function scaleStage() {
     const sx = window.innerWidth  / 1920;
-    const sy = window.innerHeight / 1080;
+    const sy = window.innerHeight / 1081;
     const s  = Math.min(sx, sy);
     stage.style.transform = `scale(${s})`;
   }
