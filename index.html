@@ -779,6 +779,304 @@
       line-height: 1.4;
     }
 
+    /* ════════════════════════════════════════════════════════════════
+       SLIDE 17 · Classify Data Risk
+    ════════════════════════════════════════════════════════════════ */
+    .classify-subtitle {
+      font-size: 20px;
+      color: #777;
+      margin-bottom: 16px;
+      margin-top: -10px;
+    }
+
+    .classify-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .classify-card {
+      background: #fff;
+      border: 2px solid #ddd;
+      border-radius: 12px;
+      padding: 14px 14px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      transition: background 0.3s ease, border-color 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .classify-card[data-level="high"] { border-color: #b01010; background: rgba(176,16,16,0.07); }
+    .classify-card[data-level="mod"]  { border-color: #c07000; background: rgba(192,112,0,0.07); }
+    .classify-card[data-level="low"]  { border-color: #1a7a1a; background: rgba(26,122,26,0.07); }
+
+    .classify-card-icon { font-size: 28px; line-height: 1; }
+
+    .classify-card-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #111;
+      line-height: 1.3;
+      flex: 1;
+    }
+
+    .c-btns { display: flex; gap: 5px; }
+
+    .c-btn {
+      flex: 1;
+      padding: 5px 0;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      border: 1.5px solid;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      transition: filter 0.15s, transform 0.15s;
+    }
+
+    .c-btn:hover { filter: brightness(0.88); transform: scale(1.04); }
+
+    .c-btn-h { color: #b01010; border-color: #b01010; background: rgba(176,16,16,0.07); }
+    .c-btn-m { color: #b06000; border-color: #c07000; background: rgba(192,112,0,0.07); }
+    .c-btn-l { color: #1a7a1a; border-color: #1a7a1a; background: rgba(26,122,26,0.07); }
+
+    .classify-badge {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 4px 0;
+      border-radius: 6px;
+      display: none;
+    }
+
+    .classify-card[data-level] .classify-badge { display: block; }
+    .classify-card[data-level="high"] .classify-badge { color: #b01010; background: rgba(176,16,16,0.12); }
+    .classify-card[data-level="mod"]  .classify-badge { color: #b06000; background: rgba(192,112,0,0.12); }
+    .classify-card[data-level="low"]  .classify-badge { color: #1a7a1a; background: rgba(26,122,26,0.12); }
+
+    /* ════════════════════════════════════════════════════════════════
+       SLIDE 18 · Approved Services per Risk Tier
+    ════════════════════════════════════════════════════════════════ */
+    .tier-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+      margin-top: 4px;
+    }
+
+    .tier-card {
+      border-radius: 16px;
+      border: 2px solid var(--tc);
+      background: var(--tb);
+      padding: 24px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    }
+
+    .tier-risk-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--tc);
+      background: var(--tb2);
+      padding: 6px 14px;
+      border-radius: 20px;
+      width: fit-content;
+    }
+
+    .tier-icon { font-size: 20px; }
+
+    .tier-data-desc {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.45;
+      padding-bottom: 12px;
+      border-bottom: 1.5px solid rgba(0,0,0,0.07);
+    }
+
+    .tier-services-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: -6px;
+    }
+
+    .tier-service-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 17px;
+      color: #222;
+      font-weight: 500;
+    }
+
+    .tier-service-item::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--tc);
+      flex-shrink: 0;
+    }
+
+    .tier-note {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.4;
+      font-style: italic;
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1.5px solid rgba(0,0,0,0.07);
+    }
+
+    /* ════════════════════════════════════════════════════════════════
+       SLIDE 19 · DGX Spark
+    ════════════════════════════════════════════════════════════════ */
+    .dgx-layout {
+      display: flex;
+      gap: 36px;
+      align-items: stretch;
+      flex: 1;
+      margin-top: 4px;
+    }
+
+    .dgx-left { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+    .dgx-stats {
+      display: flex;
+      gap: 16px;
+    }
+
+    .dgx-stat {
+      flex: 1;
+      background: rgba(26,58,143,0.05);
+      border: 1.5px solid rgba(26,58,143,0.15);
+      border-radius: 14px;
+      padding: 18px 16px;
+      text-align: center;
+    }
+
+    .dgx-stat-value {
+      font-size: 40px;
+      font-weight: 900;
+      color: #1a3a8f;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .dgx-stat-label {
+      font-size: 14px;
+      color: #666;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .dgx-features { display: flex; flex-direction: column; gap: 14px; }
+
+    .dgx-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 20px;
+      color: #333;
+      line-height: 1.4;
+    }
+
+    .dgx-feature-icon { font-size: 24px; flex-shrink: 0; margin-top: 1px; }
+
+    .dgx-right {
+      width: 460px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .dgx-hardware {
+      flex: 1;
+      background: linear-gradient(145deg, #0d0d0d 0%, #1a1a2e 100%);
+      border-radius: 20px;
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      border: 1px solid rgba(118,185,0,0.35);
+      box-shadow: 0 0 48px rgba(118,185,0,0.1), inset 0 1px 0 rgba(255,255,255,0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dgx-hardware::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(118,185,0,0.12) 0%, transparent 70%);
+    }
+
+    .dgx-nvidia-logo {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      color: #76b900;
+      text-transform: uppercase;
+    }
+
+    .dgx-model-name {
+      font-size: 38px;
+      font-weight: 900;
+      color: #fff;
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    .dgx-model-sub {
+      font-size: 16px;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+    }
+
+    .dgx-hw-divider {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #76b900, transparent);
+    }
+
+    .dgx-price-tag {
+      font-size: 28px;
+      font-weight: 700;
+      color: #76b900;
+    }
+
+    .dgx-suu-badge {
+      background: rgba(26,58,143,0.9);
+      border-radius: 12px;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 17px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .dgx-suu-icon { font-size: 24px; }
+
     /* ── Chrome: progress + counter + nav ─────────────────────────── */
     #progress {
       position: fixed;
@@ -1329,6 +1627,278 @@
     </div>
   </div>
 
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SLIDE 15 · Section Divider: Risk Classification
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="3" data-index="14">
+    <div class="section-divider-wrap">
+      <div>
+        <div class="section-big-num" style="color:rgba(26,122,26,0.07);">03</div>
+        <div class="section-accent-bar" style="background:#1a7a1a;"></div>
+        <div class="section-big-title">Risk Classification</div>
+        <div class="section-big-sub">Frameworks for identifying and managing AI risk at your institution</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SLIDE 16 · Interactive Question: Shadow AI
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="3" data-index="15">
+    <div class="content">
+      <div class="label">Interactive Question</div>
+      <div class="heading" style="font-size:44px; margin-bottom:16px;">Who's the bigger shadow AI risk?</div>
+      <div class="mc-question">According to a 2026 study by TrustedTech, which group uses unapproved AI tools at work more frequently?</div>
+      <div class="mc-options">
+        <button class="mc-btn" data-correct="true" onclick="mcAnswer(this)">
+          <div class="mc-btn-letter" style="background:rgba(26,58,143,0.1);color:#1a3a8f;">A</div>
+          <div class="mc-btn-desc">Senior Decision-Makers — executives, directors, and department heads</div>
+        </button>
+        <button class="mc-btn" data-correct="false" onclick="mcAnswer(this)">
+          <div class="mc-btn-letter" style="background:rgba(26,58,143,0.1);color:#1a3a8f;">B</div>
+          <div class="mc-btn-desc">Junior Employees — entry-level and early-career staff</div>
+        </button>
+      </div>
+      <div class="mc-result" id="slide16-result">
+        <div class="mc-result-badge">Answer: A</div>
+        <div class="mc-result-text">Senior leaders are the <strong>biggest source of shadow AI risk</strong> — they have more authority to bypass approval processes and more access to sensitive data. <em>Source: TrustedTech (2026) — businesswire.com</em></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SLIDE 17 · Interactive: Classify Data Risk
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="3" data-index="16">
+    <div class="content">
+      <div class="label">Section III · Risk Classification</div>
+      <div class="heading" style="font-size:46px; margin-bottom:6px;">Classify the Risk Level</div>
+      <div class="classify-subtitle">Click HIGH · MOD · LOW for each data type in a research administration context</div>
+      <div class="classify-grid">
+
+        <div class="classify-card">
+          <div class="classify-card-icon">🏥</div>
+          <div class="classify-card-name">Patient Health Records (PHI)</div>
+          <div class="c-btns">
+            <button class="c-btn c-btn-h" onclick="classify(this,'high')">HIGH</button>
+            <button class="c-btn c-btn-m" onclick="classify(this,'mod')">MOD</button>
+            <button class="c-btn c-btn-l" onclick="classify(this,'low')">LOW</button>
+          </div>
+          <div class="classify-badge"></div>
+        </div>
+
+        <div class="classify-card">
+          <div class="classify-card-icon">🔢</div>
+          <div class="classify-card-name">Social Security Numbers</div>
+          <div class="c-btns">
+            <button class="c-btn c-btn-h" onclick="classify(this,'high')">HIGH</button>
+            <button class="c-btn c-btn-m" onclick="classify(this,'mod')">MOD</button>
+            <button class="c-btn c-btn-l" onclick="classify(this,'low')">LOW</button>
+          </div>
+          <div class="classify-badge"></div>
+        </div>
+
+        <div class="classify-card">
+          <div class="classify-card-icon">🎓</div>
+          <div class="classify-card-name">Student Records (FERPA)</div>
+          <div class="c-btns">
+            <button class="c-btn c-btn-h" onclick="classify(this,'high')">HIGH</button>
+            <button class="c-btn c-btn-m" onclick="classify(this,'mod')">MOD</button>
+            <button class="c-btn c-btn-l" onclick="classify(this,'low')">LOW</button>
+          </div>
+          <div class="classify-badge"></div>
+        </div>
+
+        <div class="classify-card">
+          <div class="classify-card-icon">👤</div>
+          <div class="classify-card-name">Personnel &amp; HR Files</div>
+          <div class="c-btns">
+            <button class="c-btn c-btn-h" onclick="classify(this,'high')">HIGH</button>
+            <button class="c-btn c-btn-m" onclick="classify(this,'mod')">MOD</button>
+            <button class="c-btn c-btn-l" onclick="classify(this,'low')">LOW</button>
+          </div>
+          <div class="classify-badge"></div>
+        </div>
+
+        <div class="classify-card">
+          <div class="classify-card-icon">📋</div>
+          <div class="classify-card-name">Active Grant Proposals</div>
+          <div class="c-btns">
+            <button class="c-btn c-btn-h" onclick="classify(this,'high')">HIGH</button>
+            <button class="c-btn c-btn-m" onclick="classify(this,'mod')">MOD</button>
+            <button class="c-btn c-btn-l" onclick="classify(this,'low')">LOW</button>
+          </div>
+          <div class="classify-badge"></div>
+        </div>
+
+        <div class="classify-card">
+          <div class="classify-card-icon">💰</div>
+          <div class="classify-card-name">Research Budget Data</div>
+          <div class="c-btns">
+            <button class="c-btn c-btn-h" onclick="classify(this,'high')">HIGH</button>
+            <button class="c-btn c-btn-m" onclick="classify(this,'mod')">MOD</button>
+            <button class="c-btn c-btn-l" onclick="classify(this,'low')">LOW</button>
+          </div>
+          <div class="classify-badge"></div>
+        </div>
+
+        <div class="classify-card">
+          <div class="classify-card-icon">📚</div>
+          <div class="classify-card-name">Published Research</div>
+          <div class="c-btns">
+            <button class="c-btn c-btn-h" onclick="classify(this,'high')">HIGH</button>
+            <button class="c-btn c-btn-m" onclick="classify(this,'mod')">MOD</button>
+            <button class="c-btn c-btn-l" onclick="classify(this,'low')">LOW</button>
+          </div>
+          <div class="classify-badge"></div>
+        </div>
+
+        <div class="classify-card">
+          <div class="classify-card-icon">📅</div>
+          <div class="classify-card-name">Meeting Agendas &amp; Minutes</div>
+          <div class="c-btns">
+            <button class="c-btn c-btn-h" onclick="classify(this,'high')">HIGH</button>
+            <button class="c-btn c-btn-m" onclick="classify(this,'mod')">MOD</button>
+            <button class="c-btn c-btn-l" onclick="classify(this,'low')">LOW</button>
+          </div>
+          <div class="classify-badge"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SLIDE 18 · Approved Services per Risk Tier
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="3" data-index="17">
+    <div class="content">
+      <div class="label">Section III · Risk Classification</div>
+      <div class="heading" style="font-size:46px; margin-bottom:14px;">Match the Tool to the Data</div>
+      <div class="tier-grid">
+
+        <!-- HIGH RISK -->
+        <div class="tier-card" style="--tc:#b01010; --tb:rgba(176,16,16,0.04); --tb2:rgba(176,16,16,0.12);" data-step>
+          <div class="tier-risk-badge"><span class="tier-icon">🔴</span> High Risk</div>
+          <div class="tier-data-desc">PHI, SSNs, FERPA records, personnel files, controlled research data — regulatory exposure if leaked</div>
+          <div class="tier-services-label">Approved Tools</div>
+          <div class="tier-service-item">Locally Hosted Model (on-premise)</div>
+          <div class="tier-service-item">University-managed private deployment</div>
+          <div class="tier-service-item">Air-gapped / offline AI systems</div>
+          <div class="tier-note">Data never leaves your network. Zero third-party exposure.</div>
+        </div>
+
+        <!-- MODERATE RISK -->
+        <div class="tier-card" style="--tc:#c07000; --tb:rgba(192,112,0,0.04); --tb2:rgba(192,112,0,0.12);" data-step>
+          <div class="tier-risk-badge"><span class="tier-icon">🟡</span> Moderate Risk</div>
+          <div class="tier-data-desc">Grant proposals, budgets, pre-publication research, contract data — sensitive but not regulated</div>
+          <div class="tier-services-label">Approved Tools</div>
+          <div class="tier-service-item">ChatGPT Enterprise (OpenAI)</div>
+          <div class="tier-service-item">Claude for Work (Anthropic)</div>
+          <div class="tier-service-item">Microsoft 365 Copilot</div>
+          <div class="tier-service-item">Google Gemini for Workspace</div>
+          <div class="tier-note">Contractual data protection; inputs not used for model training.</div>
+        </div>
+
+        <!-- LOW RISK -->
+        <div class="tier-card" style="--tc:#1a7a1a; --tb:rgba(26,122,26,0.04); --tb2:rgba(26,122,26,0.12);" data-step>
+          <div class="tier-risk-badge"><span class="tier-icon">🟢</span> Low Risk</div>
+          <div class="tier-data-desc">Published research, public announcements, meeting notes, general policy drafts — no sensitive content</div>
+          <div class="tier-services-label">Approved Tools</div>
+          <div class="tier-service-item">ChatGPT (Free / Plus)</div>
+          <div class="tier-service-item">Claude.ai</div>
+          <div class="tier-service-item">Google Gemini</div>
+          <div class="tier-service-item">Perplexity, Copilot, etc.</div>
+          <div class="tier-note">Still review terms — many standard plans train on user inputs.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SLIDE 19 · Locally Hosted Models: NVIDIA DGX Spark
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="3" data-index="18">
+    <div class="content">
+      <div class="label">Section III · Risk Classification</div>
+      <div class="heading" style="font-size:46px; margin-bottom:10px;">Local AI on Your Desk</div>
+      <div class="dgx-layout">
+
+        <div class="dgx-left">
+          <div class="dgx-stats">
+            <div class="dgx-stat">
+              <div class="dgx-stat-value">$3,999</div>
+              <div class="dgx-stat-label">Starting Price</div>
+            </div>
+            <div class="dgx-stat">
+              <div class="dgx-stat-value">128 GB</div>
+              <div class="dgx-stat-label">Unified Memory</div>
+            </div>
+            <div class="dgx-stat">
+              <div class="dgx-stat-value">70B+</div>
+              <div class="dgx-stat-label">Parameter Models (local)</div>
+            </div>
+          </div>
+
+          <div class="dgx-features">
+            <div class="dgx-feature" data-step>
+              <div class="dgx-feature-icon">🖥️</div>
+              Desktop form factor — sits on a standard office desk, no server room required
+            </div>
+            <div class="dgx-feature" data-step>
+              <div class="dgx-feature-icon">🔒</div>
+              Fully air-gapped option — sensitive data never leaves your building or network
+            </div>
+            <div class="dgx-feature" data-step>
+              <div class="dgx-feature-icon">🤖</div>
+              Runs frontier-class open models: Llama 3, Mistral, Phi-4, and more
+            </div>
+            <div class="dgx-feature" data-step>
+              <div class="dgx-feature-icon">⚡</div>
+              NVIDIA Grace Blackwell Superchip — purpose-built for AI inference workloads
+            </div>
+          </div>
+        </div>
+
+        <div class="dgx-right">
+          <div class="dgx-hardware">
+            <div class="dgx-nvidia-logo">NVIDIA</div>
+            <div class="dgx-model-name">DGX Spark</div>
+            <div class="dgx-model-sub">Personal AI Supercomputer</div>
+            <div class="dgx-hw-divider"></div>
+            <div class="dgx-price-tag">from $3,999</div>
+          </div>
+          <div class="dgx-suu-badge">
+            <div class="dgx-suu-icon">🏫</div>
+            <div>Currently deployed at Southern Utah University for high-risk research data</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SLIDE 20 · Section III Takeaways
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="3" data-index="19">
+    <div class="content">
+      <div class="label">Section III · Takeaways</div>
+      <div class="heading">What This Means for You</div>
+      <div class="takeaway-key" style="border-color:#1a7a1a; background:rgba(26,122,26,0.06);">
+        <div class="takeaway-key-icon">📋</div>
+        <div class="takeaway-key-text" style="color:#1a7a1a;">Standardized guidance is key for maintaining data security</div>
+      </div>
+      <ul class="takeaway-list">
+        <li data-step>Well thought-through policies make decision-making clear — employees should never have to guess which AI tool is safe for a given task</li>
+        <li data-step>Shadow AI is most likely to come from leadership — policy compliance must apply at every level of the organization</li>
+        <li data-step>A tiered approval framework (High / Moderate / Low) scales with your institution and reduces friction for low-risk use</li>
+      </ul>
+    </div>
+  </div>
+
 </div><!-- /#stage -->
 
 <!-- ── Chrome ──────────────────────────────────────────────────────── -->
@@ -1398,6 +1968,14 @@
   }
 
   function prev() { goTo(cur - 1); }
+
+  /* ── Data Risk Classification ───────────────────────────────── */
+  function classify(btn, level) {
+    const card  = btn.closest('.classify-card');
+    const badge = card.querySelector('.classify-badge');
+    card.dataset.level = level;
+    badge.textContent = { high: 'HIGH RISK', mod: 'MODERATE', low: 'LOW RISK' }[level];
+  }
 
   /* ── Multiple Choice interaction ────────────────────────────── */
   function mcAnswer(btn) {
