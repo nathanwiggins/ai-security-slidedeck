@@ -11,10 +11,10 @@ Hosted on GitHub Pages at: **[your-github-pages-url]**
 |---|---------|--------|
 | — | Introduction | 1 – Title, 2 – Presenters, 3 – Overview |
 | 01 | AI Model Training | 4 – Section divider, 5 – True/False interactive, 6 – Training process flow, 7 – Model inversion attack flow, 8 – Takeaways |
-| 02 | Malicious Attacks | *(coming soon)* |
+| 02 | Malicious Attacks | 9 – Section divider, 10 – Resume ranking interactive, 11 – Resume attack reveal, 12 – Prompt anatomy diagram, 13 – Prompt injection examples, 14 – Takeaways |
 | 03 | Risk Classification | *(coming soon)* |
 
-**Total:** 8 slides (in progress)
+**Total:** 14 slides (in progress)
 
 ---
 
