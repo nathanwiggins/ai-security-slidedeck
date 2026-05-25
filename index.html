@@ -1077,6 +1077,149 @@
 
     .dgx-suu-icon { font-size: 24px; }
 
+    /* ════════════════════════════════════════════════════════════════
+       SLIDE 21 · Q & A
+    ════════════════════════════════════════════════════════════════ */
+    .qa-wrap {
+      position: absolute;
+      top: 152px; left: 96px; right: 96px; bottom: 395px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .qa-bg-mark {
+      position: absolute;
+      font-size: 420px;
+      font-weight: 900;
+      color: rgba(26, 58, 143, 0.05);
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .qa-label {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #1a3a8f;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .qa-title {
+      font-size: 82px;
+      font-weight: 700;
+      color: #111;
+      line-height: 1.05;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 16px;
+    }
+
+    .qa-subtitle {
+      font-size: 26px;
+      color: #666;
+      line-height: 1.5;
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin-bottom: 32px;
+    }
+
+    .qa-chips {
+      display: flex;
+      gap: 14px;
+      position: relative;
+      z-index: 1;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .qa-chip {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #1a3a8f;
+      background: rgba(26, 58, 143, 0.07);
+      border: 1.5px solid rgba(26, 58, 143, 0.15);
+      padding: 9px 22px;
+      border-radius: 20px;
+    }
+
+    /* ════════════════════════════════════════════════════════════════
+       SLIDE 22 · Contact Information
+    ════════════════════════════════════════════════════════════════ */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 52px;
+      margin-top: 12px;
+    }
+
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 38px 36px 32px;
+      background: rgba(26, 58, 143, 0.04);
+      border-radius: 20px;
+      border: 1.5px solid rgba(26, 58, 143, 0.12);
+      gap: 10px;
+      transition: box-shadow 0.22s ease, transform 0.22s ease;
+    }
+
+    .contact-card:hover {
+      box-shadow: 0 10px 36px rgba(26, 58, 143, 0.14);
+      transform: translateY(-4px);
+    }
+
+    .contact-avatar {
+      width: 148px;
+      height: 148px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 44px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.92);
+      letter-spacing: 3px;
+      box-shadow: 0 8px 28px rgba(26, 58, 143, 0.32);
+      flex-shrink: 0;
+      margin-bottom: 10px;
+    }
+
+    .contact-name  { font-size: 30px; font-weight: 700; color: #111; }
+    .contact-title { font-size: 19px; color: #555; line-height: 1.4; }
+    .contact-inst  { font-size: 18px; font-weight: 700; color: #1a3a8f; margin-bottom: 6px; }
+
+    .contact-email-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      border: 1.5px solid rgba(26, 58, 143, 0.2);
+      border-radius: 10px;
+      padding: 11px 20px;
+      margin-top: 4px;
+    }
+
+    .contact-email-icon { font-size: 20px; }
+
+    .contact-email {
+      font-size: 20px;
+      color: #1a3a8f;
+      font-weight: 600;
+    }
+
     /* ── Chrome: progress + counter + nav ─────────────────────────── */
     #progress {
       position: fixed;
@@ -1896,6 +2039,59 @@
         <li data-step>Shadow AI is most likely to come from leadership — policy compliance must apply at every level of the organization</li>
         <li data-step>A tiered approval framework (High / Moderate / Low) scales with your institution and reduces friction for low-risk use</li>
       </ul>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SLIDE 21 · Q & A
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="4" data-index="20">
+    <div class="qa-wrap">
+      <div class="qa-bg-mark">?</div>
+      <div class="qa-label">Conclusion</div>
+      <div class="qa-title">Questions &amp; Answers</div>
+      <div class="qa-subtitle">We covered AI Model Training, Malicious Attacks, and Risk Classification — what's on your mind?</div>
+      <div class="qa-chips">
+        <div class="qa-chip">Section I · AI Model Training</div>
+        <div class="qa-chip">Section II · Malicious Attacks</div>
+        <div class="qa-chip">Section III · Risk Classification</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SLIDE 22 · Contact Information
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="4" data-index="21">
+    <div class="content">
+      <div class="label">Thank You</div>
+      <div class="heading">Get in Touch</div>
+      <div class="contact-grid">
+
+        <div class="contact-card">
+          <div class="contact-avatar" style="background: linear-gradient(145deg, #1a3a8f 0%, #3a6af0 100%);">LS</div>
+          <div class="contact-name">Luke Sheneman</div>
+          <div class="contact-title">Director of Research Computing</div>
+          <div class="contact-inst">University of Idaho</div>
+          <div class="contact-email-wrap">
+            <div class="contact-email-icon">✉️</div>
+            <div class="contact-email">sheneman@uidaho.edu</div>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-avatar" style="background: linear-gradient(145deg, #0f2d6b 0%, #2952c2 100%);">NW</div>
+          <div class="contact-name">Nathan Wiggins</div>
+          <div class="contact-title">Data Scientist</div>
+          <div class="contact-inst">Southern Utah University</div>
+          <div class="contact-email-wrap">
+            <div class="contact-email-icon">✉️</div>
+            <div class="contact-email">nathanwiggins@suu.edu</div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 

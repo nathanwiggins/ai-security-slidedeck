@@ -14,7 +14,9 @@ Hosted on GitHub Pages at: **[your-github-pages-url]**
 | 02 | Malicious Attacks | 9 – Section divider, 10 – Resume ranking interactive, 11 – Resume attack reveal, 12 – Prompt anatomy diagram, 13 – Prompt injection examples, 14 – Takeaways |
 | 03 | Risk Classification | 15 – Section divider, 16 – Shadow AI interactive, 17 – Classify data risk (interactive), 18 – Approved services per tier, 19 – NVIDIA DGX Spark spotlight, 20 – Takeaways |
 
-**Total:** 20 slides (in progress — conclusion slides remaining)
+| — | Conclusion | 21 – Q&A, 22 – Contact information |
+
+**Total:** 22 slides ✓
 
 ---
 
