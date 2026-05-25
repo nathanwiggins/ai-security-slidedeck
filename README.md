@@ -9,12 +9,12 @@ Hosted on GitHub Pages at: **[your-github-pages-url]**
 
 | # | Section | Slides |
 |---|---------|--------|
-| — | Introduction | Title slide, presenter bios, presentation overview |
-| 01 | AI Model Training | *(coming soon)* |
+| — | Introduction | 1 – Title, 2 – Presenters, 3 – Overview |
+| 01 | AI Model Training | 4 – Section divider, 5 – True/False interactive, 6 – Training process flow, 7 – Model inversion attack flow, 8 – Takeaways |
 | 02 | Malicious Attacks | *(coming soon)* |
 | 03 | Risk Classification | *(coming soon)* |
 
-**Total:** 3 slides (in progress)
+**Total:** 8 slides (in progress)
 
 ---
 
@@ -32,7 +32,7 @@ Hosted on GitHub Pages at: **[your-github-pages-url]**
 
 ## Customization
 
-**To add or edit slide content**, open `index.html`. Each slide is a `<div class="slide ...">` block. Bullet lists with `data-reveal` on the `<ul>` element will reveal one item at a time during the presentation.
+**To add or edit slide content**, open `index.html`. Each slide is a `<div class="slide ...">` block. Any element with `data-step` starts hidden and is revealed one at a time with Space/→ before the deck advances to the next slide. Use this for bullet list items (`<li data-step>`) and process-flow nodes.
 
 **To swap in real presenter photos**, find the `.photo-circle` div for each presenter in `index.html` and replace it with `<img src="your-photo.jpg" class="photo-circle" style="object-fit:cover;" />`.
 

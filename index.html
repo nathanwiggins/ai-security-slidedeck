@@ -267,6 +267,234 @@
       line-height: 1.55;
     }
 
+    /* ════════════════════════════════════════════════════════════════
+       SLIDE 04 · Section Divider
+    ════════════════════════════════════════════════════════════════ */
+    .section-divider-wrap {
+      position: absolute;
+      top: 152px; left: 96px; right: 96px; bottom: 395px;
+      display: flex;
+      align-items: center;
+    }
+
+    .section-big-num {
+      font-size: 220px;
+      font-weight: 900;
+      color: rgba(26, 58, 143, 0.07);
+      line-height: 1;
+      margin-bottom: -44px;
+      user-select: none;
+    }
+
+    .section-accent-bar {
+      width: 90px;
+      height: 6px;
+      background: #1a3a8f;
+      margin-bottom: 24px;
+    }
+
+    .section-big-title {
+      font-size: 88px;
+      font-weight: 700;
+      color: #111;
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    .section-big-sub {
+      font-size: 30px;
+      color: #666;
+      font-weight: 400;
+    }
+
+    /* ════════════════════════════════════════════════════════════════
+       SLIDE 05 · True / False
+    ════════════════════════════════════════════════════════════════ */
+    .tf-statement {
+      font-size: 34px;
+      color: #222;
+      line-height: 1.45;
+      font-style: italic;
+      background: rgba(26, 58, 143, 0.04);
+      border-left: 5px solid #1a3a8f;
+      padding: 22px 32px;
+      border-radius: 0 12px 12px 0;
+      margin-bottom: 30px;
+    }
+
+    .tf-buttons {
+      display: flex;
+      gap: 32px;
+      margin-bottom: 30px;
+    }
+
+    .tf-btn {
+      flex: 1;
+      max-width: 320px;
+      padding: 26px 0;
+      font-size: 34px;
+      font-weight: 700;
+      border: 3px solid;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      letter-spacing: 0.08em;
+      font-family: Arial, sans-serif;
+    }
+
+    .tf-btn-true  { color: #1a7a1a; border-color: #1a7a1a; background: rgba(26,122,26,0.06); }
+    .tf-btn-false { color: #b01010; border-color: #b01010; background: rgba(176,16,16,0.06); }
+
+    .tf-btn:hover:not(:disabled) { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.14); }
+    .tf-btn:disabled { cursor: default; opacity: 0.4; }
+
+    .tf-result {
+      display: none;
+      align-items: flex-start;
+      gap: 26px;
+      background: rgba(176, 16, 16, 0.05);
+      border: 2px solid rgba(176, 16, 16, 0.2);
+      border-radius: 14px;
+      padding: 26px 30px;
+      animation: fadeSlideUp 0.4s ease forwards;
+    }
+
+    .tf-result.is-visible { display: flex; }
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .tf-result-badge {
+      font-size: 26px;
+      font-weight: 700;
+      color: #b01010;
+      background: rgba(176,16,16,0.12);
+      padding: 8px 20px;
+      border-radius: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .tf-result-text { font-size: 25px; color: #333; line-height: 1.5; }
+
+    /* ════════════════════════════════════════════════════════════════
+       SLIDES 06–07 · Process Flow
+    ════════════════════════════════════════════════════════════════ */
+    .process-flow {
+      display: flex;
+      align-items: stretch;
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    .flow-step {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 24px 16px;
+      background: #fff;
+      border-radius: 16px;
+      border-top: 5px solid var(--flow-color, #1a3a8f);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .flow-arrow {
+      flex-shrink: 0;
+      width: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+    }
+
+    .flow-step-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin-bottom: 14px;
+      flex-shrink: 0;
+    }
+
+    .flow-step-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 6px;
+    }
+
+    .flow-step-title {
+      font-size: 21px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .flow-step-desc { font-size: 16px; color: #666; line-height: 1.4; }
+
+    /* Step-reveal animation (all data-step elements) */
+    [data-step] {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.38s ease, transform 0.38s ease;
+    }
+
+    [data-step].step-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Slide 07 subheading */
+    .slide-subhead { font-size: 23px; color: #666; margin-bottom: 20px; margin-top: -14px; }
+
+    /* ════════════════════════════════════════════════════════════════
+       SLIDE 08 · Takeaways
+    ════════════════════════════════════════════════════════════════ */
+    .takeaway-key {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      background: rgba(26, 58, 143, 0.06);
+      border-radius: 16px;
+      padding: 26px 32px;
+      margin-bottom: 32px;
+      border-left: 6px solid #1a3a8f;
+    }
+
+    .takeaway-key-icon { font-size: 46px; flex-shrink: 0; }
+
+    .takeaway-key-text { font-size: 30px; font-weight: 700; color: #1a3a8f; line-height: 1.3; }
+
+    .takeaway-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+
+    .takeaway-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      font-size: 25px;
+      color: #333;
+      line-height: 1.45;
+    }
+
+    .takeaway-list li::before {
+      content: '→';
+      color: #1a3a8f;
+      font-weight: 700;
+      font-size: 25px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
     /* ── Chrome: progress + counter + nav ─────────────────────────── */
     #progress {
       position: fixed;
@@ -439,6 +667,163 @@
     </div>
   </div>
 
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SLIDE 04 · Section Divider: AI Model Training
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="1" data-index="3">
+    <div class="section-divider-wrap">
+      <div>
+        <div class="section-big-num">01</div>
+        <div class="section-accent-bar"></div>
+        <div class="section-big-title">AI Model Training</div>
+        <div class="section-big-sub">How AI learns — and why that matters for your data</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SLIDE 05 · Interactive True / False
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="1" data-index="4">
+    <div class="content">
+      <div class="label">Interactive Question</div>
+      <div class="heading" style="font-size:46px; margin-bottom:18px;">True or False?</div>
+      <div class="tf-statement">"AI models are trained on recognizing patterns and cannot expose the raw data they were trained on."</div>
+      <div class="tf-buttons">
+        <button class="tf-btn tf-btn-true"  onclick="tfAnswer('true')">TRUE</button>
+        <button class="tf-btn tf-btn-false" onclick="tfAnswer('false')">FALSE</button>
+      </div>
+      <div class="tf-result" id="slide5-result">
+        <div class="tf-result-badge">Answer: FALSE</div>
+        <div class="tf-result-text">Through <strong>model inversion</strong> attacks, adversaries can reconstruct sensitive training data — including private records — directly from a model's responses. What goes in does not stay hidden.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SLIDE 06 · How AI Models Learn (click-through process flow)
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="1" data-index="5">
+    <div class="content">
+      <div class="label">Section I · AI Model Training</div>
+      <div class="heading">How AI Models Learn</div>
+      <div class="process-flow">
+
+        <div class="flow-step" data-step style="--flow-color:#1a3a8f;">
+          <div class="flow-step-icon" style="background:rgba(26,58,143,0.1);">📊</div>
+          <div class="flow-step-num">Step 1</div>
+          <div class="flow-step-title">Raw Data</div>
+          <div class="flow-step-desc">Large datasets collected: text, images, records, documents</div>
+        </div>
+
+        <div class="flow-arrow" data-step style="color:#1a3a8f;">▶</div>
+
+        <div class="flow-step" data-step style="--flow-color:#1a3a8f;">
+          <div class="flow-step-icon" style="background:rgba(26,58,143,0.1);">⚙️</div>
+          <div class="flow-step-num">Step 2</div>
+          <div class="flow-step-title">Processing</div>
+          <div class="flow-step-desc">Data is cleaned, labeled, and structured for training</div>
+        </div>
+
+        <div class="flow-arrow" data-step style="color:#1a3a8f;">▶</div>
+
+        <div class="flow-step" data-step style="--flow-color:#1a3a8f;">
+          <div class="flow-step-icon" style="background:rgba(26,58,143,0.1);">🧠</div>
+          <div class="flow-step-num">Step 3</div>
+          <div class="flow-step-title">Training Loop</div>
+          <div class="flow-step-desc">Model adjusts its weights to minimize prediction errors</div>
+        </div>
+
+        <div class="flow-arrow" data-step style="color:#1a3a8f;">▶</div>
+
+        <div class="flow-step" data-step style="--flow-color:#1a3a8f;">
+          <div class="flow-step-icon" style="background:rgba(26,58,143,0.1);">📐</div>
+          <div class="flow-step-num">Step 4</div>
+          <div class="flow-step-title">Evaluation</div>
+          <div class="flow-step-desc">Accuracy validated on unseen data; hyperparameters tuned</div>
+        </div>
+
+        <div class="flow-arrow" data-step style="color:#1a3a8f;">▶</div>
+
+        <div class="flow-step" data-step style="--flow-color:#1a3a8f;">
+          <div class="flow-step-icon" style="background:rgba(26,58,143,0.1);">✅</div>
+          <div class="flow-step-num">Step 5</div>
+          <div class="flow-step-title">Deployment</div>
+          <div class="flow-step-desc">Model serves predictions — training data now encoded in weights</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SLIDE 07 · Model Inversion (click-through attack flow)
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="1" data-index="6">
+    <div class="content">
+      <div class="label">Section I · AI Model Training</div>
+      <div class="heading" style="color:#8b0000;">Model Inversion Attack</div>
+      <div class="slide-subhead">A bad actor can reverse-engineer private training data — here's how:</div>
+      <div class="process-flow">
+
+        <div class="flow-step" data-step style="--flow-color:#b01010;">
+          <div class="flow-step-icon" style="background:rgba(176,16,16,0.08);">🤖</div>
+          <div class="flow-step-num">Target</div>
+          <div class="flow-step-title">Public AI Model</div>
+          <div class="flow-step-desc">Attacker identifies a model trained on sensitive or proprietary data</div>
+        </div>
+
+        <div class="flow-arrow" data-step style="color:#b01010;">▶</div>
+
+        <div class="flow-step" data-step style="--flow-color:#b01010;">
+          <div class="flow-step-icon" style="background:rgba(176,16,16,0.08);">🎯</div>
+          <div class="flow-step-num">Attack</div>
+          <div class="flow-step-title">Crafted Queries</div>
+          <div class="flow-step-desc">Thousands of targeted prompts probe the model's memorized knowledge</div>
+        </div>
+
+        <div class="flow-arrow" data-step style="color:#b01010;">▶</div>
+
+        <div class="flow-step" data-step style="--flow-color:#b01010;">
+          <div class="flow-step-icon" style="background:rgba(176,16,16,0.08);">📈</div>
+          <div class="flow-step-num">Extraction</div>
+          <div class="flow-step-title">Response Mining</div>
+          <div class="flow-step-desc">Patterns in outputs reveal what the model "memorized" from training</div>
+        </div>
+
+        <div class="flow-arrow" data-step style="color:#b01010;">▶</div>
+
+        <div class="flow-step" data-step style="--flow-color:#b01010;">
+          <div class="flow-step-icon" style="background:rgba(176,16,16,0.08);">🔓</div>
+          <div class="flow-step-num">Result</div>
+          <div class="flow-step-title">Data Recovered</div>
+          <div class="flow-step-desc">Private records — names, PHI, financial data — reconstructed from weights</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SLIDE 08 · Section I Takeaways
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="1" data-index="7">
+    <div class="content">
+      <div class="label">Section I · Takeaways</div>
+      <div class="heading">What This Means for You</div>
+      <div class="takeaway-key">
+        <div class="takeaway-key-icon">🔑</div>
+        <div class="takeaway-key-text">Understand how your data is being used to train AI models</div>
+      </div>
+      <ul class="takeaway-list">
+        <li data-step>Check the terms &amp; conditions of every AI tool you use — many train on your inputs by default</li>
+        <li data-step>Enterprise licenses (e.g. ChatGPT Enterprise, Claude for Work, Microsoft 365 Copilot) typically opt you out of model training</li>
+        <li data-step>When in doubt, treat the AI like a public forum — don't submit data you wouldn't share openly</li>
+      </ul>
+    </div>
+  </div>
+
 </div><!-- /#stage -->
 
 <!-- ── Chrome ──────────────────────────────────────────────────────── -->
@@ -498,8 +883,34 @@
     updateChrome();
   }
 
-  function next() { goTo(cur + 1); }
+  function next() {
+    const hidden = slides[cur].querySelectorAll('[data-step]:not(.step-visible)');
+    if (hidden.length > 0) {
+      hidden[0].classList.add('step-visible');
+      return;
+    }
+    goTo(cur + 1);
+  }
+
   function prev() { goTo(cur - 1); }
+
+  /* ── True / False interaction ────────────────────────────────── */
+  function tfAnswer(answer) {
+    const trueBtn  = document.querySelector('.tf-btn-true');
+    const falseBtn = document.querySelector('.tf-btn-false');
+    const result   = document.getElementById('slide5-result');
+
+    trueBtn.disabled  = true;
+    falseBtn.disabled = true;
+
+    // Correct answer is FALSE
+    if (answer === 'true') {
+      trueBtn.style.cssText  += ';background:rgba(176,16,16,0.15);opacity:1';
+    }
+    falseBtn.style.cssText += ';background:rgba(26,122,26,0.2);border-color:#1a7a1a;color:#1a7a1a;opacity:1';
+
+    if (result) result.classList.add('is-visible');
+  }
 
   /* ── Chrome ──────────────────────────────────────────────────── */
   function updateChrome() {
