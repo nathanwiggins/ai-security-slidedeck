@@ -32,6 +32,20 @@ Hosted on GitHub Pages at: **[your-github-pages-url]**
 ---
 
 
+## Layout
+
+Content is positioned inside a safe zone that clears the NCURA logo (top) and NYC skyline graphic (bottom):
+
+| Property | Value |
+|----------|-------|
+| Safe zone top | 152 px |
+| Safe zone bottom | 300 px |
+| Slide canvas | 1920 × 1080 px |
+
+Reducing the bottom from the original 395 px to 300 px reclaims ~95 px of usable vertical space while still clearing the tallest skyline peaks (~350 px from bottom).
+
+---
+
 ## Customization
 
 **To add or edit slide content**, open `index.html`. Each slide is a `<div class="slide ...">` block. Any element with `data-step` starts hidden and is revealed one at a time with Space/→ before the deck advances to the next slide. Use this for bullet list items (`<li data-step>`) and process-flow nodes.
