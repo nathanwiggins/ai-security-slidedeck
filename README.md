@@ -10,13 +10,13 @@ Hosted on GitHub Pages at: **[your-github-pages-url]**
 | # | Section | Slides |
 |---|---------|--------|
 | — | Introduction | 1 – Title, 2 – Presenters, 3 – Overview |
-| 01 | AI Model Training | 4 – Section divider, 5 – True/False interactive, 6 – Training process flow, 7 – Model inversion attack flow, 8 – Takeaways |
-| 02 | Malicious Attacks | 9 – Section divider, 10 – Resume ranking interactive, 11 – Resume attack reveal, 12 – Prompt anatomy diagram, 13 – Prompt injection examples, 14 – Takeaways |
-| 03 | Risk Classification | 15 – Section divider, 16 – Shadow AI interactive, 17 – Classify data risk (interactive), 18 – Approved services per tier, 19 – NVIDIA DGX Spark spotlight, 20 – Takeaways |
+| 01 | AI Model Training | 4 – Section divider, 5 – True/False interactive, 6 – What is an AI Model? (graphic), 7 – Neural Networks (graphic), 8 – Inspired by Biology (graphic), 9 – Data to Features (graphic), 10 – Transformers! (graphic), 11 – Training vs. Inference (graphic), 12 – Training process flow, 13 – Raw Data (GPT-3 training data table), 14 – Data Processing (graphic), 15 – Training Loop (graphic), 16 – 3 Stages of LLM Training (graphic), 17 – Models Deployed for Inference (graphic), 18 – Model inversion attack flow, 19 – Response Mining (graphic), 20 – Takeaways |
+| 02 | Malicious Attacks | 21 – Section divider, 22 – Resume ranking interactive, 23 – Resume attack reveal, 24 – Prompt anatomy diagram, 25 – Prompt injection examples, 26 – Prompt Injection with Agentic AI (graphic), 27 – Takeaways |
+| 03 | Risk Classification | 28 – Section divider, 29 – Shadow AI interactive, 30 – Classify data risk (interactive), 31 – Approved services per tier, 32 – NVIDIA DGX Spark spotlight, 33 – Takeaways |
 
-| — | Conclusion | 21 – Q&A, 22 – Contact information |
+| — | Conclusion | 34 – Q&A, 35 – Contact information |
 
-**Total:** 22 slides ✓
+**Total:** 35 slides ✓
 
 ---
 
@@ -50,7 +50,7 @@ Reducing the bottom from the original 395 px to 300 px reclaims ~95 px of usable
 
 **To add or edit slide content**, open `index.html`. Each slide is a `<div class="slide ...">` block. Any element with `data-step` starts hidden and is revealed one at a time with Space/→ before the deck advances to the next slide. Use this for bullet list items (`<li data-step>`) and process-flow nodes.
 
-**To swap in real presenter photos**, find the `.photo-circle` div for each presenter in `index.html` and replace it with `<img src="your-photo.jpg" class="photo-circle" style="object-fit:cover;" />`.
+**Presenter photos** are live on slide 2: `sheneman.jpg` (Luke Sheneman) and `wiggins.jpg` (Nathan Wiggins), rendered as `<img class="photo-circle" style="object-fit:cover;" />`. To swap in a different photo, replace the file in the repo root (or the `src` on the corresponding `.photo-circle` img in `index.html`).
 
 **Fonts:** Arial throughout. No external font dependencies.
 

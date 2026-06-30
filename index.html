@@ -169,8 +169,8 @@
     /* Replace the initials div with <img> to use real photos:
        <img src="photo.jpg" class="photo-circle" style="object-fit:cover;" />  */
     .photo-circle {
-      width: 168px;
-      height: 168px;
+      width: 218px;
+      height: 218px;
       border-radius: 50%;
       background: linear-gradient(145deg, #1a3a8f 0%, #3a6af0 100%);
       display: flex;
@@ -395,7 +395,7 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 24px 16px;
+      padding: 38px 18px;
       background: #fff;
       border-radius: 16px;
       border-top: 5px solid var(--flow-color, #1a3a8f);
@@ -424,7 +424,7 @@
     }
 
     .flow-step-num {
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 700;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -433,14 +433,49 @@
     }
 
     .flow-step-title {
-      font-size: 24px;
+      font-size: 28px;
       font-weight: 700;
       color: #111;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       line-height: 1.2;
     }
 
-    .flow-step-desc { font-size: 18px; color: #666; line-height: 1.4; }
+    .flow-step-desc { font-size: 21px; color: #666; line-height: 1.4; }
+
+    /* ── Data table ──────────────────────────────────────────────── */
+    .data-table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 1200px;
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.10);
+      font-size: 30px;
+    }
+    .data-table th, .data-table td {
+      padding: 22px 32px;
+      text-align: left;
+      border-bottom: 1px solid #e6e6ea;
+    }
+    .data-table thead th {
+      background: #eef0f6;
+      color: #1a3a8f;
+      font-weight: 700;
+      font-size: 31px;
+    }
+    .data-table tbody tr:last-child td { border-bottom: none; }
+    .data-table tbody td:first-child { font-weight: 700; color: #1a3a8f; }
+    .data-table tbody td:nth-child(2),
+    .data-table tbody td:nth-child(3) { color: #333; }
+    .table-caption {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #1a3a8f;
+      margin-bottom: 16px;
+    }
 
     /* Step-reveal animation (all data-step elements) */
     [data-step] {
@@ -615,12 +650,12 @@
     .resume-card-a { border-top: 4px solid #1a7a1a; }
     .resume-card-b { border-top: 4px solid #b01010; }
 
-    .resume-name { font-size: 19px; font-weight: 700; color: #111; }
-    .resume-subtitle { font-size: 14px; color: #555; }
-    .resume-contact { font-size: 12px; color: #999; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+    .resume-name { font-size: 24px; font-weight: 700; color: #111; }
+    .resume-subtitle { font-size: 17px; color: #555; }
+    .resume-contact { font-size: 14px; color: #999; padding-bottom: 8px; border-bottom: 1px solid #eee; }
 
     .resume-section-title {
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.12em;
@@ -631,8 +666,8 @@
     }
 
     .resume-entry { display: flex; flex-direction: column; gap: 4px; }
-    .resume-entry-title { font-size: 13px; font-weight: 700; color: #222; }
-    .resume-entry-org { font-size: 12px; color: #777; margin-bottom: 2px; }
+    .resume-entry-title { font-size: 16px; font-weight: 700; color: #222; }
+    .resume-entry-org { font-size: 14px; color: #777; margin-bottom: 2px; }
 
     .resume-bar { height: 7px; background: #e8e8e8; border-radius: 3px; }
 
@@ -645,23 +680,24 @@
     }
 
     .resume-injection-label {
-      font-size: 11px;
+      font-size: 14px;
       font-weight: 700;
       color: #b01010;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
     }
 
     .resume-injection-text {
-      font-size: 12px;
+      font-size: 18px;
+      font-weight: 700;
       color: #8b0000;
       font-family: 'Courier New', monospace;
-      line-height: 1.45;
+      line-height: 1.5;
     }
 
     .resume-badge {
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 700;
       text-align: center;
       padding: 7px 14px;
@@ -690,12 +726,12 @@
     }
 
     .prompt-layer-icon { font-size: 34px; }
-    .prompt-layer-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--lc); }
-    .prompt-layer-title { font-size: 22px; font-weight: 700; color: #111; }
-    .prompt-layer-desc { font-size: 16px; color: #555; line-height: 1.45; }
+    .prompt-layer-tag { font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--lc); }
+    .prompt-layer-title { font-size: 25px; font-weight: 700; color: #111; }
+    .prompt-layer-desc { font-size: 18px; color: #555; line-height: 1.45; }
 
     .prompt-layer-example {
-      font-size: 13px;
+      font-size: 15px;
       font-family: 'Courier New', monospace;
       color: #666;
       background: rgba(0,0,0,0.04);
@@ -716,7 +752,7 @@
     }
 
     .prompt-combined-icon { font-size: 28px; flex-shrink: 0; }
-    .prompt-combined-text { font-size: 20px; font-weight: 700; color: #1a3a8f; flex: 1; line-height: 1.3; }
+    .prompt-combined-text { font-size: 23px; font-weight: 700; color: #1a3a8f; flex: 1; line-height: 1.3; }
     .prompt-combined-arrow { font-size: 26px; color: #1a3a8f; flex-shrink: 0; }
 
     .prompt-combined-result {
@@ -753,8 +789,8 @@
     }
 
     .injection-card-icon { font-size: 34px; }
-    .injection-card-title { font-size: 21px; font-weight: 700; color: #111; }
-    .injection-card-desc { font-size: 16px; color: #555; line-height: 1.45; flex: 1; }
+    .injection-card-title { font-size: 24px; font-weight: 700; color: #111; }
+    .injection-card-desc { font-size: 18px; color: #555; line-height: 1.45; flex: 1; }
 
     .injection-example {
       background: rgba(176,16,16,0.05);
@@ -764,7 +800,7 @@
     }
 
     .injection-example-label {
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 700;
       color: #b01010;
       text-transform: uppercase;
@@ -773,7 +809,7 @@
     }
 
     .injection-example-text {
-      font-size: 13px;
+      font-size: 15px;
       color: #8b0000;
       font-family: 'Courier New', monospace;
       line-height: 1.4;
@@ -786,7 +822,7 @@
       font-size: 20px;
       color: #777;
       margin-bottom: 16px;
-      margin-top: -10px;
+      margin-top: 8px;
     }
 
     .classify-grid {
@@ -814,7 +850,7 @@
     .classify-card-icon { font-size: 28px; line-height: 1; }
 
     .classify-card-name {
-      font-size: 16px;
+      font-size: 19px;
       font-weight: 700;
       color: #111;
       line-height: 1.3;
@@ -826,7 +862,7 @@
     .c-btn {
       flex: 1;
       padding: 5px 0;
-      font-size: 11px;
+      font-size: 14px;
       font-weight: 700;
       letter-spacing: 0.08em;
       border: 1.5px solid;
@@ -843,7 +879,7 @@
     .c-btn-l { color: #1a7a1a; border-color: #1a7a1a; background: rgba(26,122,26,0.07); }
 
     .classify-badge {
-      font-size: 11px;
+      font-size: 14px;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -883,7 +919,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: 13px;
+      font-size: 16px;
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -897,7 +933,7 @@
     .tier-icon { font-size: 20px; }
 
     .tier-data-desc {
-      font-size: 16px;
+      font-size: 19px;
       color: #444;
       line-height: 1.45;
       padding-bottom: 12px;
@@ -905,7 +941,7 @@
     }
 
     .tier-services-label {
-      font-size: 11px;
+      font-size: 14px;
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -917,7 +953,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 17px;
+      font-size: 20px;
       color: #222;
       font-weight: 500;
     }
@@ -932,13 +968,40 @@
     }
 
     .tier-note {
-      font-size: 14px;
+      font-size: 17px;
       color: #666;
       line-height: 1.4;
       font-style: italic;
       margin-top: auto;
       padding-top: 10px;
       border-top: 1.5px solid rgba(0,0,0,0.07);
+    }
+
+    .onprem-warning {
+      margin-top: 22px;
+      width: calc((100% - 28px) / 3);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(176,16,16,0.07);
+      border: 2px solid #b01010;
+      border-radius: 12px;
+      padding: 14px 20px;
+    }
+
+    .onprem-arrow {
+      font-size: 40px;
+      font-weight: 700;
+      color: #b01010;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .onprem-text {
+      font-size: 19px;
+      font-weight: 700;
+      color: #8b0000;
+      line-height: 1.35;
     }
 
     /* ════════════════════════════════════════════════════════════════
@@ -989,7 +1052,7 @@
       display: flex;
       align-items: flex-start;
       gap: 14px;
-      font-size: 20px;
+      font-size: 23px;
       color: #333;
       line-height: 1.4;
     }
@@ -1182,8 +1245,8 @@
     }
 
     .contact-avatar {
-      width: 148px;
-      height: 148px;
+      width: 218px;
+      height: 218px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -1297,14 +1360,14 @@
       <div class="presenter-grid">
 
         <div class="presenter-card">
-          <div class="photo-circle">LS</div>
+          <img src="sheneman.jpg" alt="Luke Sheneman" class="photo-circle" style="object-fit:cover;" />
           <div class="presenter-name">Luke Sheneman</div>
           <div class="presenter-title">Director of Research Computing</div>
           <div class="presenter-inst">University of Idaho</div>
         </div>
 
         <div class="presenter-card">
-          <div class="photo-circle" style="background: linear-gradient(145deg, #0f2d6b 0%, #2952c2 100%);">NW</div>
+          <img src="wiggins.jpg" alt="Nathan Wiggins" class="photo-circle" style="object-fit:cover;" />
           <div class="presenter-name">Nathan Wiggins</div>
           <div class="presenter-title">Data Scientist</div>
           <div class="presenter-inst">Southern Utah University</div>
@@ -1427,9 +1490,97 @@
   </div>
 
   <!-- ══════════════════════════════════════════════════════════════
-       How AI Models Learn (click-through process flow)
+       What is an AI Model?
   ══════════════════════════════════════════════════════════════════ -->
   <div class="slide bg-template" data-section="1" data-index="5">
+    <div class="content" style="align-items:center;">
+      <div class="label" style="align-self:flex-start;">Section I · AI Model Training</div>
+      <div class="heading" style="align-self:flex-start; margin-bottom:20px;">What is an AI Model?</div>
+      <div style="display:flex; align-items:center; justify-content:center; gap:48px; flex:1; min-height:0; width:100%; margin-top:120px;">
+        <img src="whatis.png" alt="Many approaches to AI models: LLMs, computer vision, transformers, diffusion models, and reinforcement learning"
+             style="display:block; max-height:600px; max-width:62%; width:auto; border-radius:14px; box-shadow:0 14px 40px rgba(0,0,0,0.28);" />
+        <img src="ai-nesting.webp" alt="Nested fields: AI contains Machine Learning, which contains Neural Networks, which contains Transformers, which contains LLMs"
+             style="display:block; max-height:600px; max-width:34%; width:auto; border-radius:14px; box-shadow:0 14px 40px rgba(0,0,0,0.28);" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       Neural Networks
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="1" data-index="6">
+    <div class="content" style="align-items:center;">
+      <div class="label" style="align-self:flex-start;">Section I · AI Model Training</div>
+      <div class="heading" style="align-self:flex-start; margin-bottom:20px;">Neural Networks</div>
+      <img src="neural3.png" alt="A neural network classifying a handwritten digit: 784 input pixels feed hidden layers that output digits 0–9"
+           style="display:block; max-width:100%; max-height:650px; width:auto; border-radius:14px; box-shadow:0 14px 40px rgba(0,0,0,0.28);" />
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       Inspired by Biology
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="1" data-index="7">
+    <div class="content">
+      <div class="label">Section I · AI Model Training</div>
+      <div class="heading" style="margin-bottom:16px;">Inspired by Biology</div>
+      <div style="display:flex; align-items:center; justify-content:center; gap:56px; flex:1; min-height:0; margin-top:150px;">
+        <img src="neu.png" alt="A biological neuron (dendrites, soma, axon, synapse) alongside its mathematical model: weighted inputs summed with a bias and passed through an activation function"
+             style="display:block; max-height:655px; max-width:50%; width:auto; border-radius:14px; box-shadow:0 14px 40px rgba(0,0,0,0.28);" />
+        <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:32px; width:558px;">
+          <img src="neural2.png" alt="A single artificial neuron: inputs X1, X2 multiplied by weights W1, W2, summed with a bias to produce output y"
+               style="display:block; width:100%; height:auto; border-radius:14px; box-shadow:0 14px 40px rgba(0,0,0,0.28);" />
+          <img src="neural1.jpg" alt="A fully connected neural network: input layer, two hidden layers, and an output layer"
+               style="display:block; width:100%; height:auto; border-radius:14px; box-shadow:0 14px 40px rgba(0,0,0,0.28);" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       Data to Features
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="1" data-index="8">
+    <div class="content" style="align-items:center;">
+      <div class="label" style="align-self:flex-start;">Section I · AI Model Training</div>
+      <div class="heading" style="align-self:flex-start; margin-bottom:20px;">Data to Features</div>
+      <img src="hier1.png" alt="Hierarchical feature learning: low-level features (edges, dark spots), mid-level features (eyes, ears, nose), and high-level features (facial structure)"
+           style="display:block; max-width:100%; max-height:520px; width:auto; border-radius:14px; box-shadow:0 14px 40px rgba(0,0,0,0.28);" />
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       Transformers!
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="1" data-index="9">
+    <div class="content">
+      <div class="label">Section I · AI Model Training</div>
+      <div class="heading" style="margin-bottom:20px;">Transformers!</div>
+      <div style="display:flex; align-items:center; justify-content:center; gap:56px; flex:1; min-height:0; margin-top:120px;">
+        <img src="att.png" alt="The 'Attention Is All You Need' paper that introduced the Transformer architecture"
+             style="display:block; max-height:560px; max-width:48%; width:auto; border-radius:14px; box-shadow:0 14px 40px rgba(0,0,0,0.28);" />
+        <img src="abstract.png" alt="Transformers understand language across levels of abstraction: leaves (specific words) → branch (parts) → tree (the whole) → plant (more abstract concept)"
+             style="display:block; max-height:560px; max-width:48%; width:auto; border-radius:14px; box-shadow:0 14px 40px rgba(0,0,0,0.28);" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       Training vs. Inference
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="1" data-index="10">
+    <div class="content" style="align-items:center;">
+      <div class="label" style="align-self:flex-start;">Section I · AI Model Training</div>
+      <div class="heading" style="align-self:flex-start; margin-bottom:20px;">Training vs. Inference</div>
+      <img src="training_vs_inference.jpg" alt="Training: many users' labeled images train a model to produce a Trained Model. Inference: a user submits a new image and the trained model predicts the output label, e.g. 'Cat'"
+           style="display:block; max-width:100%; max-height:540px; width:auto; margin-top:60px; border-radius:14px; box-shadow:0 14px 40px rgba(0,0,0,0.28);" />
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       How AI Models Learn (click-through process flow)
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="1" data-index="11">
     <div class="content">
       <div class="label">Section I · AI Model Training</div>
       <div class="heading">How AI Models Learn</div>
@@ -1483,9 +1634,109 @@
   </div>
 
   <!-- ══════════════════════════════════════════════════════════════
+       Raw Data (GPT-3 training data table)
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="1" data-index="12">
+    <div class="content">
+      <div class="label">Section I · AI Model Training</div>
+      <div class="heading" style="margin-bottom:14px;">Raw Data</div>
+      <div class="slide-subhead" style="margin-bottom:30px;">What goes into a model — and how that's grown</div>
+      <div style="display:flex; align-items:flex-start; justify-content:center; gap:48px; flex:1; min-height:0;">
+
+        <div style="display:flex; flex-direction:column; align-items:center;">
+          <div class="table-caption">GPT-3 training data (2020)</div>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Dataset</th>
+                <th>Tokens</th>
+                <th>Proportion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Common Crawl</td><td>410 billion</td><td>60%</td></tr>
+              <tr><td>WebText2</td><td>19 billion</td><td>22%</td></tr>
+              <tr><td>Books1</td><td>12 billion</td><td>8%</td></tr>
+              <tr><td>Books2</td><td>55 billion</td><td>8%</td></tr>
+              <tr><td>Wikipedia</td><td>3 billion</td><td>3%</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="display:flex; flex-direction:column; align-items:center;">
+          <div class="table-caption">Frontier models today (estimated)</div>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Model family</th>
+                <th>Pretraining tokens</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>GPT-5</td><td>30–80T</td></tr>
+              <tr><td>Claude 4</td><td>30–70T</td></tr>
+              <tr><td>Gemini 2.5/3</td><td>40–100T</td></tr>
+              <tr><td>Grok 3</td><td>30–80T</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       Data Processing
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="1" data-index="13">
+    <div class="content" style="align-items:center;">
+      <div class="label" style="align-self:flex-start;">Section I · AI Model Training</div>
+      <div class="heading" style="align-self:flex-start; margin-bottom:20px;">Data Processing</div>
+      <img src="data_processing.png" alt="From raw data to training an LLM: 1) Raw Data (web pages, books, code), 2) Clean & Filter, 3) Deduplicate, 4) Format & Tokenize, 5) Training Data"
+           style="display:block; max-width:100%; max-height:700px; width:auto; margin-top:0px; border-radius:14px; box-shadow:0 14px 40px rgba(0,0,0,0.28);" />
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       Training Loop
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="1" data-index="14">
+    <div class="content" style="align-items:center;">
+      <div class="label" style="align-self:flex-start;">Section I · AI Model Training</div>
+      <div class="heading" style="align-self:flex-start; margin-bottom:20px;">Training Loop</div>
+      <img src="training_loop.png" alt="Training loop: a randomly-initialized network (Before Training) makes poor predictions; gradient descent iteratively updates weights to descend the loss curve from high to low loss; the trained network (After Training) fits the data and makes better predictions"
+           style="display:block; max-width:100%; max-height:700px; width:auto; margin-top:0px; border-radius:14px; box-shadow:0 14px 40px rgba(0,0,0,0.28);" />
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       3 Stages of LLM Training
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="1" data-index="15">
+    <div class="content" style="align-items:center;">
+      <div class="label" style="align-self:flex-start;">Section I · AI Model Training</div>
+      <div class="heading" style="align-self:flex-start; margin-bottom:20px;">3 Stages of LLM Training</div>
+      <img src="llm_training_stages.png" alt="Three stages of LLM training: 1) Pre-training on broad web text, code, and images produces a Base LLM; 2) Supervised Fine Tuning on question/answer pairs produces an SFT Model; 3) Reinforcement Learning from human preference ratings produces the final RL Model"
+           style="display:block; max-width:100%; max-height:700px; width:auto; margin-top:0px; border-radius:14px; box-shadow:0 14px 40px rgba(0,0,0,0.28);" />
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       Models Deployed for Inference
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="1" data-index="16">
+    <div class="content" style="align-items:center;">
+      <div class="label" style="align-self:flex-start;">Section I · AI Model Training</div>
+      <div class="heading" style="align-self:flex-start; margin-bottom:20px;">Models Deployed for Inference</div>
+      <img src="models_deployed_inference.png" alt="A deployed AI model is frozen and no longer learning: inputs (images, text, tables) flow into a frozen, locked model that produces inference outputs (classification, sentiment, scores). No training, no updates, no learning — used only for inference."
+           style="display:block; max-width:100%; max-height:700px; width:auto; margin-top:0px; border-radius:14px; box-shadow:0 14px 40px rgba(0,0,0,0.28);" />
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
        Model Inversion (click-through attack flow)
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="1" data-index="6">
+  <div class="slide bg-template" data-section="1" data-index="17">
     <div class="content">
       <div class="label">Section I · AI Model Training</div>
       <div class="heading" style="color:#8b0000;">Model Inversion Attack</div>
@@ -1531,9 +1782,21 @@
   </div>
 
   <!-- ══════════════════════════════════════════════════════════════
+       Response Mining
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="1" data-index="18">
+    <div class="content" style="align-items:center;">
+      <div class="label" style="align-self:flex-start;">Section I · AI Model Training</div>
+      <div class="heading" style="align-self:flex-start; margin-bottom:20px;">Response Mining</div>
+      <img src="response_mining.png" alt="Response mining: sensitive records (passwords, credit card and SSN numbers) stored behind a locked database are absorbed into an LLM during training; an attacker repeatedly queries the deployed model and reconstructs the private data (e.g. a password 'hunter2', card number, and SSN) from its responses."
+           style="display:block; max-width:100%; max-height:680px; width:auto; margin-top:0px; border-radius:14px; box-shadow:0 14px 40px rgba(0,0,0,0.28);" />
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
        Section I Takeaways
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="1" data-index="7" id="slide-8">
+  <div class="slide bg-template" data-section="1" data-index="19" id="slide-8">
     <div class="content">
       <div class="label">Section I · Takeaways</div>
       <div class="heading">What This Means for You</div>
@@ -1545,6 +1808,7 @@
         <li data-step>Check the terms &amp; conditions of every AI tool you use — many train on your inputs by default</li>
         <li data-step>Enterprise licenses (e.g. ChatGPT Enterprise, Claude for Work, Microsoft 365 Copilot) typically opt you out of model training</li>
         <li data-step>When in doubt, treat the AI like a public forum — don't submit data you wouldn't share openly</li>
+        <li data-step>Consider using on-premises AI models, if available</li>
       </ul>
     </div>
   </div>
@@ -1553,7 +1817,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Section Divider: Malicious Attacks
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="2" data-index="8">
+  <div class="slide bg-template" data-section="2" data-index="20">
     <div class="section-divider-wrap">
       <div>
         <div class="section-big-num" style="color:rgba(176,16,16,0.07);">02</div>
@@ -1567,7 +1831,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Interactive Question: Resume Ranking
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="2" data-index="9">
+  <div class="slide bg-template" data-section="2" data-index="21">
     <div class="content">
       <div class="label">Interactive Question</div>
       <div class="heading" style="font-size:44px; margin-bottom:16px;">Which resume ranks higher?</div>
@@ -1592,7 +1856,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Resume A vs Resume B
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="2" data-index="10">
+  <div class="slide bg-template" data-section="2" data-index="22">
     <div class="content">
       <div class="label">Section II · Malicious Attacks</div>
       <div class="heading" style="font-size:44px; margin-bottom:14px;">The Resume Attack</div>
@@ -1662,7 +1926,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Anatomy of an AI Prompt
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="2" data-index="11">
+  <div class="slide bg-template" data-section="2" data-index="23">
     <div class="content">
       <div class="label">Section II · Malicious Attacks</div>
       <div class="heading" style="font-size:46px; margin-bottom:14px;">What the AI Actually Processes</div>
@@ -1710,11 +1974,11 @@
   <!-- ══════════════════════════════════════════════════════════════
        Prompt Injection
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="2" data-index="12">
+  <div class="slide bg-template" data-section="2" data-index="24">
     <div class="content">
       <div class="label">Section II · Malicious Attacks</div>
       <div class="heading" style="font-size:46px; margin-bottom:6px;">Prompt Injection</div>
-      <div class="slide-subhead" style="margin-bottom:18px;">Embedding hidden instructions in content that the AI will process</div>
+      <div class="slide-subhead" style="margin-top:15px; margin-bottom:18px;">Embedding hidden instructions in content that the AI will process</div>
       <div class="injection-grid">
 
         <div class="injection-card" data-step>
@@ -1752,9 +2016,21 @@
   </div>
 
   <!-- ══════════════════════════════════════════════════════════════
+       Prompt Injection with Agentic AI
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="2" data-index="25">
+    <div class="content" style="align-items:center;">
+      <div class="label" style="align-self:flex-start;">Section II · Malicious Attacks</div>
+      <div class="heading" style="align-self:flex-start; margin-bottom:20px;">Prompt Injection with Agentic AI</div>
+      <img src="prompt_injection_agentic.png" alt="Prompt injection against an agentic AI: a user asks the agent to analyze their spending, but a hidden injected prompt tells the agent to ignore previous instructions and access the user's bank account. The agent, which has tools and access to web search, documents, and a private bank account, exfiltrates sensitive data — account number, balance, and transactions."
+           style="display:block; max-width:100%; max-height:700px; width:auto; margin-top:0px; border-radius:14px; box-shadow:0 14px 40px rgba(0,0,0,0.28);" />
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
        Section II Takeaways
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="2" data-index="13">
+  <div class="slide bg-template" data-section="2" data-index="26">
     <div class="content">
       <div class="label">Section II · Takeaways</div>
       <div class="heading">What This Means for You</div>
@@ -1766,6 +2042,7 @@
         <li data-step>Do not inherently trust received documents, emails, or code — they may contain injected instructions your AI will follow</li>
         <li data-step>Recognize that more is being processed than just what you type — every attachment is part of the AI's input</li>
         <li data-step>Be skeptical of AI outputs that seem unusually strong in one direction, especially when reviewing submitted materials</li>
+        <li data-step>Be careful with agentic systems in auto-mode when dealing with sensitive data</li>
       </ul>
     </div>
   </div>
@@ -1774,7 +2051,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Section Divider: Risk Classification
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="3" data-index="14">
+  <div class="slide bg-template" data-section="3" data-index="27">
     <div class="section-divider-wrap">
       <div>
         <div class="section-big-num" style="color:rgba(26,122,26,0.07);">03</div>
@@ -1788,7 +2065,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Interactive Question: Shadow AI
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="3" data-index="15">
+  <div class="slide bg-template" data-section="3" data-index="28">
     <div class="content">
       <div class="label">Interactive Question</div>
       <div class="heading" style="font-size:44px; margin-bottom:16px;">Who's the bigger shadow AI risk?</div>
@@ -1813,7 +2090,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Interactive: Classify Data Risk
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="3" data-index="16">
+  <div class="slide bg-template" data-section="3" data-index="29">
     <div class="content">
       <div class="label">Section III · Risk Classification</div>
       <div class="heading" style="font-size:46px; margin-bottom:6px;">Classify the Risk Level</div>
@@ -1915,7 +2192,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Approved Services per Risk Tier
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="3" data-index="17">
+  <div class="slide bg-template" data-section="3" data-index="30">
     <div class="content">
       <div class="label">Section III · Risk Classification</div>
       <div class="heading" style="font-size:46px; margin-bottom:14px;">Match the Tool to the Data</div>
@@ -1929,6 +2206,7 @@
           <div class="tier-service-item">Locally Hosted Model (on-premise)</div>
           <div class="tier-service-item">University-managed private deployment</div>
           <div class="tier-service-item">Air-gapped / offline AI systems</div>
+          <div class="tier-service-item">Some AI Providers with Enterprise License</div>
           <div class="tier-note">Data never leaves your network. Zero third-party exposure.</div>
         </div>
 
@@ -1957,13 +2235,18 @@
         </div>
 
       </div>
+
+      <div class="onprem-warning" data-step>
+        <div class="onprem-arrow">&#8593;</div>
+        <div class="onprem-text">On-prem AI security is <strong>not guaranteed</strong> — it must be built and monitored.</div>
+      </div>
     </div>
   </div>
 
   <!-- ══════════════════════════════════════════════════════════════
        Locally Hosted Models: NVIDIA DGX Spark
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="3" data-index="18">
+  <div class="slide bg-template" data-section="3" data-index="31">
     <div class="content">
       <div class="label">Section III · Risk Classification</div>
       <div class="heading" style="font-size:46px; margin-bottom:10px;">Local AI on Your Desk</div>
@@ -2026,7 +2309,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Section III Takeaways
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="3" data-index="19">
+  <div class="slide bg-template" data-section="3" data-index="32">
     <div class="content">
       <div class="label">Section III · Takeaways</div>
       <div class="heading">What This Means for You</div>
@@ -2035,9 +2318,9 @@
         <div class="takeaway-key-text" style="color:#1a7a1a;">Standardized guidance is key for maintaining data security</div>
       </div>
       <ul class="takeaway-list">
-        <li data-step>Well thought-through policies make decision-making clear — employees should never have to guess which AI tool is safe for a given task</li>
+        <li data-step>Well thought-through policies and data classification make decision-making clear — employees should never have to guess which AI tool is safe for a given task</li>
         <li data-step>Shadow AI is most likely to come from leadership — policy compliance must apply at every level of the organization</li>
-        <li data-step>A tiered approval framework (High / Moderate / Low) scales with your institution and reduces friction for low-risk use</li>
+        <li data-step>A tiered data classification framework (High / Moderate / Low) scales with your institution and reduces friction for low-risk use</li>
       </ul>
     </div>
   </div>
@@ -2046,7 +2329,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Q & A
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="4" data-index="20">
+  <div class="slide bg-template" data-section="4" data-index="33">
     <div class="qa-wrap">
       <div class="qa-bg-mark">?</div>
       <div class="qa-label">Conclusion</div>
@@ -2063,14 +2346,14 @@
   <!-- ══════════════════════════════════════════════════════════════
        Contact Information
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="4" data-index="21">
+  <div class="slide bg-template" data-section="4" data-index="34">
     <div class="content">
       <div class="label">Thank You</div>
       <div class="heading">Get in Touch</div>
       <div class="contact-grid">
 
         <div class="contact-card">
-          <div class="contact-avatar" style="background: linear-gradient(145deg, #1a3a8f 0%, #3a6af0 100%);">LS</div>
+          <img src="sheneman.jpg" alt="Luke Sheneman" class="contact-avatar" style="object-fit:cover;" />
           <div class="contact-name">Luke Sheneman</div>
           <div class="contact-title">Director of Research Computing</div>
           <div class="contact-inst">University of Idaho</div>
@@ -2081,7 +2364,7 @@
         </div>
 
         <div class="contact-card">
-          <div class="contact-avatar" style="background: linear-gradient(145deg, #0f2d6b 0%, #2952c2 100%);">NW</div>
+          <img src="wiggins.jpg" alt="Nathan Wiggins" class="contact-avatar" style="object-fit:cover;" />
           <div class="contact-name">Nathan Wiggins</div>
           <div class="contact-title">Data Scientist</div>
           <div class="contact-inst">Southern Utah University</div>
