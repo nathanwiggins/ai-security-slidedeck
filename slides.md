@@ -128,7 +128,7 @@ Callout: For security: an injected story doesn't have to look like a command. An
 
 ## 03 Risk Classification
 Subtitle: Know what you're handling, and where it's allowed to go
-(Section owned by Lucas Marshall, built from his outline "NCURA AI Risk Classification Outline". Purpose: help research administrators identify the information they're handling and decide whether their institution permits its use in a particular AI tool. About 15 minutes, in three parts: understand the information and its risk level; recognize how institutional requirements differ; apply a practical decision process.)
+(Section owned by Lucas Marshall, built from his outline "NCURA AI Risk Classification Outline". Purpose: help research administrators identify the information they're handling and decide whether their institution permits its use in a particular AI tool. About 15 minutes, in three parts: understand the information and its risk level; recognize how institutional requirements differ; apply a practical decision process. Revised from his v2 outline (10/27), which updated these slides: the four data levels shown as food, the four-level classify activity, approved vs. public tools, and AI meeting assistants.)
 
 ## Interactive Question
 According to a 2026 study by TrustedTech, which group uses unapproved AI tools at work more?
@@ -138,17 +138,26 @@ B. Junior Employees
 Reference (display after correct answer shown): https://www.businesswire.com/news/home/20260519849160/en/TrustedTech-Global-and-U.S.-Data-Reveals-Senior-Leaders-Are-the-Biggest-Source-of-Shadow-AI-Risk-in-Organizations?utm_campaign=shareaholic&utm_medium=copy_link&utm_source=bookmark
 
 
+## Know What You're Feeding AI
+Subhead: Names vary by university, but most follow these four levels. Each is riskier to share, like food that's riskier to eat.
+(Four cards, revealed one at a time. Each level is shown as a food that gets progressively riskier to eat, with its AI rule and examples.)
+- 🍎 Apple, "Safe to eat almost anywhere" → Public: Generally fine for AI, within policy and copyright. Examples: published papers, public abstracts, funding announcements
+- 🍣 Sushi, "Only from a restaurant you trust" → Internal: University-approved tools only. Examples: project timelines, internal meeting notes
+- 🍄 Wild Mushrooms, "Only if an expert cleared that exact one" → Confidential: Only tools approved for this specific data. Examples: participant PII, FERPA records, PHI, proprietary research data
+- 🐡 Pufferfish, "Licensed chefs only" → Restricted: Rarely allowed in any tool. Never public AI. Examples: CUI, hazardous-materials info, health and safety risks
+Revealed callout: "Unlike your body, a public AI tool won't tell you something was bad to ingest. It takes everything, and by the time you realize the consequences, it's too late."
+(Level definitions from Lucas's outline: Public = can be freely shared without risk of harm; Internal = for use within the institution, not highly sensitive but not for public sharing; Confidential/Sensitive = requires careful protection, disclosure could cause moderate harm; Restricted = highest protection, disclosure could cause severe harm, need-to-know access.)
+
 ## Interactive Classify Data Risk
-Subhead: Click HIGH · MOD · LOW for each item. What's inside it, and who can already see it?
-(Interface where the audience classifies familiar research administration items as high, moderate, or low risk. No answer key, since levels vary by institution. Eight cards, each with a short descriptor: Funding Announcement (posted publicly by the sponsor) · Salary Spreadsheet (named personnel and their pay rates) · Unpublished Proposal (draft that hasn't been submitted yet) · Award Total (listed in a public award database) · AI Meeting Notes (auto-summary of a project team call) · Published Article (peer-reviewed and in print) · Confidential Research Data (protected by award terms or the IRB) · Budget Justification (draft for an upcoming proposal).)
+Subhead: Pick a level for each item: 🍎 Public · 🍣 Internal · 🍄 Confidential · 🐡 Restricted
+(Interface where the audience sorts familiar research administration items into the four levels by clicking the matching food. The card takes the level's color and shows a badge. No answer key, since levels vary by institution. Eight cards, each with a short descriptor: Funding Announcement (posted publicly by the sponsor) · Salary Spreadsheet (named personnel and their pay rates) · Unpublished Proposal (draft that hasn't been submitted yet) · Award Total (listed in a public award database) · AI Meeting Notes (auto-summary of a project team call) · Study Participant Records (names and health details) · Export-Controlled Data (CUI from a defense-funded project) · Budget Justification (draft for an upcoming proposal).)
 Revealed callout: "Contents and context set the level. An award total is public, but the salary spreadsheet behind it, with names attached, is not."
 
 ## One File, Many Kinds of Information
-(A mock document, "Proposal_Draft_v3.docx", with four sections. Each section's risk tag is revealed one at a time and the row tints in that color: Project Summary (public once awarded) → LOW · Preliminary Results (unpublished findings) → MODERATE · Personnel Budget (names and salaries) → HIGH · References (already published) → LOW. Final step: an arrow to a verdict card, "Whole file: High. The most sensitive piece sets the level. Handle the file at that level, or remove that piece before it goes into an AI tool.")
+(A mock document, "Proposal_Draft_v3.docx", with four sections. Each section's risk tag is revealed one at a time and the row tints in that color: Project Summary (public once awarded) → PUBLIC · Project Timeline (internal milestones) → INTERNAL · Personnel Budget (names and salaries) → CONFIDENTIAL · References (already published) → PUBLIC. Final step: an arrow to a verdict card, "Whole file: Confidential. The most sensitive piece sets the level. Handle the file at that level, or remove that piece before it goes into an AI tool.")
 
 ## Is AI Listening to Your Meeting?
-(Left: a dark video-call mockup, "Project Kickoff", with tiles for a PI, a Co-Investigator, the research administrator ("You"), and an "AI Notetaker" tile with a pulsing ● REC badge. Its live transcript captures "unpublished results" and "Dr. Lee at $142K". Right: three steps revealed one at a time. 1 Notice: AI note-takers watch calendars and join meetings on their own. 2 Ask: ask the host whether an AI tool is recording or summarizing. 3 Act: if the topic is sensitive, request its removal or decline to join.)
-Revealed callout: "Check the award. Award terms, program officers, or the IRB may forbid sharing research data outside secure institutional systems."
+(Left: a dark video-call mockup, "Project Kickoff", with tiles for a PI, a Co-Investigator, the research administrator ("You"), and an "AI Notetaker" tile with a pulsing ● REC badge. Its live transcript captures "unpublished results" and "Dr. Lee at $142K". Right: three steps revealed one at a time, for anyone about to enable a tool that records, transcribes, or summarizes. 1 Confirm approval: is the tool university-approved for what will be discussed? 2 Follow consent rules: meet consent requirements before anything is recorded or transcribed. 3 Protect the output: recordings, transcripts, and summaries need the same protection as the discussion.)
 
 ## Every Institution Draws Its Own Lines
 (Three classification "ladders" side by side, most sensitive at top, revealed one at a time, with a "more sensitive / less sensitive" axis:)
@@ -159,9 +168,10 @@ Revealed callout: "Labels, approved AI tools, and approval processes all vary. L
 Sources line: ASU Digital Trust Guidelines · U-M Safe Computing · Harvard Information Security
 
 ## If You Are Not Paying for the Product, You Are the Product
+Label: Section III · Responsible AI Use
 (Large quote, attributed as "Quoted in ASU's Digital Trust Guidelines", followed by two cards revealed one at a time.)
-- Free & personal accounts: Your prompts and uploads are the price of admission. They may be kept, reviewed, or used for training. → "Assume everything you enter is public"
-- Institution-approved accounts: A contract protects what you enter, but each tool is approved only for certain kinds of data. → "A license isn't permission for every kind of data"
+- Public AI tools: No guarantee where your data is sent, saved, viewed, or used later · No obligation to protect you or your institution · Your data is the payment: it may be kept or used for training → "Assume everything you enter is public"
+- University-approved tools: Data agreement that can limit training, retention, access, and sharing · Reviewed handling, even when it runs on vendor systems · Accountability: the university has recourse if something goes wrong · Compliance with FERPA, HIPAA, export control, and sponsor rules → "Protected only for the data it's approved for"
 
 ## Case Study: How It Works at Arizona State University
 (Three-step process flow, revealed one step at a time.)
@@ -183,7 +193,7 @@ Revealed callout: "Clear answers to all four? Go ahead. Any doubt? Ask before yo
 ## Takeaways
 Key: Clear institutional guidance makes the safe choice the easy choice
 -Classify by contents and context. One file can hold several kinds of data, and the most sensitive sets the level
--Treat free AI tools as public, and remember a license or local server doesn't cover every type of data
+-Public AI tools owe you nothing. Use university-approved tools, and only for the data they're approved for
 -Know your institution's labels, approved tools, and who to ask before you upload
 (Classic slide with bullets)
 
@@ -191,12 +201,6 @@ Key: Clear institutional guidance makes the safe choice the easy choice
 - University of Michigan, Appropriate Use of AI Services: https://genai.umich.edu/resources/appropriate-use
 - Harvard, Generative AI Guidelines: https://www.huit.harvard.edu/ai/guidelines
 - Harvard, Best Practices for Using Generative AI: https://privsec.harvard.edu/best-practices-using-generative-ai
-- NIST, Generative AI Risk Management Profile: https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf
-- NIST, AI RMF Explainer Video: https://www.nist.gov/video/introduction-nist-ai-risk-management-framework-ai-rmf-10-explainer-video
-- EDUCAUSE, How Higher Ed Can Innovate on AI Without Sacrificing Privacy: https://er.educause.edu/podcasts/educause-shop-talk/2026/how-higher-ed-can-innovate-on-ai-without-sacrificing-privacy
-- University of Michigan, Generative AI Workshop Recordings: https://www.mivideo.it.umich.edu/genai
-
-Open items from Lucas's outline: research federal sponsor AI usage guidelines (e.g., NIH NOT-OD-23-149), and find real cases where data was improperly used.
 
 # Conclusion
 

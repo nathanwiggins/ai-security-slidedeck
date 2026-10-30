@@ -785,9 +785,26 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.06);
     }
 
-    .classify-card[data-level="high"] { border-color: #b01010; background: rgba(176,16,16,0.07); }
-    .classify-card[data-level="mod"]  { border-color: #c07000; background: rgba(192,112,0,0.07); }
-    .classify-card[data-level="low"]  { border-color: #1a7a1a; background: rgba(26,122,26,0.07); }
+    /* A classified card takes its level's color (same palette as .lv-*) */
+    .classify-card[data-level="public"]     { --lc: #1a7a1a; --lb: rgba(26,122,26,0.07); }
+    .classify-card[data-level="internal"]   { --lc: #b06000; --lb: rgba(192,112,0,0.07); }
+    .classify-card[data-level="conf"]       { --lc: #b01010; --lb: rgba(176,16,16,0.07); }
+    .classify-card[data-level="restricted"] { --lc: #6b0000; --lb: rgba(107,0,0,0.09); }
+    .classify-card[data-level] { border-color: var(--lc); background: var(--lb); }
+
+    /* Legend chips in the subtitle: which food means which level */
+    .classify-key {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 6px;
+      padding: 3px 12px;
+      border-radius: 14px;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--lc);
+      background: var(--lb);
+    }
 
     .classify-card-icon { font-size: 34px; line-height: 1; }
 
@@ -807,24 +824,21 @@
 
     .c-btns { display: flex; gap: 6px; }
 
+    /* Food buttons; each carries an .lv-* class for its level's color */
     .c-btn {
       flex: 1;
-      padding: 7px 0;
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      border: 1.5px solid;
-      border-radius: 6px;
+      padding: 3px 0;
+      font-size: 26px;
+      line-height: 1.2;
+      border: 1.5px solid var(--lc);
+      border-radius: 8px;
+      background: var(--lb);
       cursor: pointer;
       font-family: Arial, sans-serif;
       transition: filter 0.15s, transform 0.15s;
     }
 
     .c-btn:hover { filter: brightness(0.88); transform: scale(1.04); }
-
-    .c-btn-h { color: #b01010; border-color: #b01010; background: rgba(176,16,16,0.07); }
-    .c-btn-m { color: #b06000; border-color: #c07000; background: rgba(192,112,0,0.07); }
-    .c-btn-l { color: #1a7a1a; border-color: #1a7a1a; background: rgba(26,122,26,0.07); }
 
     /* Pinned beside the icon so classifying doesn't grow the card */
     .classify-badge {
@@ -841,10 +855,7 @@
       display: none;
     }
 
-    .classify-card[data-level] .classify-badge { display: block; }
-    .classify-card[data-level="high"] .classify-badge { color: #b01010; background: rgba(176,16,16,0.12); }
-    .classify-card[data-level="mod"]  .classify-badge { color: #b06000; background: rgba(192,112,0,0.12); }
-    .classify-card[data-level="low"]  .classify-badge { color: #1a7a1a; background: rgba(26,122,26,0.12); }
+    .classify-card[data-level] .classify-badge { display: block; color: #fff; background: var(--lc); }
 
     /* ════════════════════════════════════════════════════════════════
        Section III shared: callout bar, risk-level colors, source line
@@ -872,6 +883,69 @@
     .lv-dark   { --lc: #6b0000; --lb: rgba(107,0,0,0.11); }
 
     .source-note { font-size: 15px; color: #999; margin-top: 12px; }
+
+    /* ════════════════════════════════════════════════════════════════
+       Data as Food (four classification levels)
+    ════════════════════════════════════════════════════════════════ */
+    .food-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+
+    .food-card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: #fff;
+      border-radius: 18px;
+      border-top: 6px solid var(--lc);
+      padding: 18px 22px 20px;
+      box-shadow: 0 4px 22px rgba(0,0,0,0.08);
+    }
+
+    .food-top { display: flex; align-items: center; gap: 14px; }
+    .food-emoji { font-size: 54px; line-height: 1; flex-shrink: 0; }
+
+    .food-name {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 3px;
+    }
+
+    .food-note { font-size: 17px; color: #666; font-style: italic; line-height: 1.35; }
+
+    .food-level {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--lc);
+      padding-top: 10px;
+      border-top: 1.5px solid rgba(0,0,0,0.07);
+    }
+
+    /* Equal-height rule chips keep the examples aligned across cards */
+    .food-rule {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--lc);
+      background: var(--lb);
+      border-radius: 10px;
+      padding: 9px 14px;
+    }
+
+    .food-ex { font-size: 17px; color: #555; line-height: 1.4; }
+
+    .food-ex b {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 2px;
+    }
 
     /* ════════════════════════════════════════════════════════════════
        One File, Many Kinds of Information
@@ -921,7 +995,7 @@
     .mix-bar { height: 8px; border-radius: 4px; background: #e8e8e8; }
 
     .mix-tag {
-      width: 140px;
+      width: 180px;
       flex-shrink: 0;
       text-align: center;
       font-size: 15px;
@@ -1165,13 +1239,13 @@
     /* ════════════════════════════════════════════════════════════════
        Free vs. Approved Accounts
     ════════════════════════════════════════════════════════════════ */
-    .quote-wrap { position: relative; text-align: center; padding-top: 10px; margin-bottom: 40px; }
+    .quote-wrap { position: relative; text-align: center; padding-top: 4px; margin-bottom: 28px; }
 
-    .quote-accent { width: 90px; height: 6px; background: #b01010; margin: 0 auto 26px; }
+    .quote-accent { width: 90px; height: 6px; background: #b01010; margin: 0 auto 20px; }
 
-    .quote-text { font-size: 64px; font-weight: 700; color: #111; line-height: 1.18; }
+    .quote-text { font-size: 54px; font-weight: 700; color: #111; line-height: 1.18; }
     .quote-text em { font-style: normal; color: #b01010; }
-    .quote-cite { font-size: 21px; color: #888; margin-top: 16px; }
+    .quote-cite { font-size: 20px; color: #888; margin-top: 12px; }
 
     .acct-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
 
@@ -1182,13 +1256,17 @@
       background: #fff;
       border-radius: 18px;
       border-top: 5px solid var(--ac);
-      padding: 28px 34px;
+      padding: 22px 32px 24px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.08);
     }
 
-    .acct-head { display: flex; align-items: center; gap: 14px; font-size: 30px; font-weight: 700; color: #111; }
-    .acct-icon { font-size: 36px; }
-    .acct-desc { font-size: 23px; color: #555; line-height: 1.45; flex: 1; }
+    .acct-head { display: flex; align-items: center; gap: 14px; font-size: 28px; font-weight: 700; color: #111; }
+    .acct-icon { font-size: 34px; }
+
+    .acct-list { flex: 1; display: flex; flex-direction: column; gap: 9px; }
+    .acct-item { display: flex; align-items: flex-start; gap: 12px; font-size: 20px; color: #444; line-height: 1.4; }
+    .acct-item-icon { width: 28px; flex-shrink: 0; text-align: center; font-size: 21px; }
+    .acct-item strong { color: #111; }
 
     .acct-rule {
       font-size: 24px;
@@ -3377,13 +3455,71 @@
   </div>
 
   <!-- ══════════════════════════════════════════════════════════════
-       Interactive: Classify Data Risk
+       Data as Food: four classification levels
   ══════════════════════════════════════════════════════════════════ -->
   <div class="slide bg-template" data-section="3" data-index="31">
     <div class="content">
       <div class="label">Section III · Risk Classification</div>
+      <div class="heading" style="font-size:46px; margin-bottom:6px;">Know What You're Feeding AI</div>
+      <div class="classify-subtitle">Names vary by university, but most follow these four levels. Each is riskier to share, like food that's riskier to eat.</div>
+      <div class="food-grid">
+
+        <div class="food-card lv-green" data-step>
+          <div class="food-top">
+            <div class="food-emoji">🍎</div>
+            <div><div class="food-name">Apple</div><div class="food-note">Safe to eat almost anywhere</div></div>
+          </div>
+          <div class="food-level">Public</div>
+          <div class="food-rule">Generally fine for AI, within policy and copyright</div>
+          <div class="food-ex"><b>Examples</b>Published papers, public abstracts, funding announcements</div>
+        </div>
+
+        <div class="food-card lv-amber" data-step>
+          <div class="food-top">
+            <div class="food-emoji">🍣</div>
+            <div><div class="food-name">Sushi</div><div class="food-note">Only from a restaurant you trust</div></div>
+          </div>
+          <div class="food-level">Internal</div>
+          <div class="food-rule">University-approved tools only</div>
+          <div class="food-ex"><b>Examples</b>Project timelines, internal meeting notes</div>
+        </div>
+
+        <div class="food-card lv-red" data-step>
+          <div class="food-top">
+            <div class="food-emoji">🍄</div>
+            <div><div class="food-name">Wild Mushrooms</div><div class="food-note">Only if an expert cleared that exact one</div></div>
+          </div>
+          <div class="food-level">Confidential</div>
+          <div class="food-rule">Only tools approved for this specific data</div>
+          <div class="food-ex"><b>Examples</b>Participant PII, FERPA records, PHI, proprietary research data</div>
+        </div>
+
+        <div class="food-card lv-dark" data-step>
+          <div class="food-top">
+            <div class="food-emoji">🐡</div>
+            <div><div class="food-name">Pufferfish</div><div class="food-note">Licensed chefs only</div></div>
+          </div>
+          <div class="food-level">Restricted</div>
+          <div class="food-rule">Rarely allowed in any tool. Never public AI.</div>
+          <div class="food-ex"><b>Examples</b>CUI, hazardous-materials info, health and safety risks</div>
+        </div>
+
+      </div>
+      <div class="callout" data-step style="--cc:#b01010; --cb:rgba(176,16,16,0.06);">
+        <div class="callout-icon">🍽️</div>
+        <div class="callout-text"><strong>Unlike your body, a public AI tool won't tell you something was bad to ingest.</strong> It takes everything, and by the time you realize the consequences, it's too late.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       Interactive: Classify Data Risk
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="3" data-index="32">
+    <div class="content">
+      <div class="label">Section III · Risk Classification</div>
       <div class="heading" style="font-size:46px; margin-bottom:6px;">Classify the Risk Level</div>
-      <div class="classify-subtitle">Click HIGH · MOD · LOW for each item. What's inside it, and who can already see it?</div>
+      <div class="classify-subtitle">Pick a level for each item:<span class="classify-key lv-green">🍎 Public</span><span class="classify-key lv-amber">🍣 Internal</span><span class="classify-key lv-red">🍄 Confidential</span><span class="classify-key lv-dark">🐡 Restricted</span></div>
       <div class="classify-grid">
 
         <div class="classify-card">
@@ -3391,9 +3527,10 @@
           <div class="classify-card-name">Funding Announcement</div>
           <div class="classify-card-desc">Posted publicly by the sponsor</div>
           <div class="c-btns">
-            <button class="c-btn c-btn-h" onclick="classify(this,'high')">HIGH</button>
-            <button class="c-btn c-btn-m" onclick="classify(this,'mod')">MOD</button>
-            <button class="c-btn c-btn-l" onclick="classify(this,'low')">LOW</button>
+            <button class="c-btn lv-green" onclick="classify(this,'public')" title="Public">🍎</button>
+            <button class="c-btn lv-amber" onclick="classify(this,'internal')" title="Internal">🍣</button>
+            <button class="c-btn lv-red" onclick="classify(this,'conf')" title="Confidential">🍄</button>
+            <button class="c-btn lv-dark" onclick="classify(this,'restricted')" title="Restricted">🐡</button>
           </div>
           <div class="classify-badge"></div>
         </div>
@@ -3403,9 +3540,10 @@
           <div class="classify-card-name">Salary Spreadsheet</div>
           <div class="classify-card-desc">Named personnel and their pay rates</div>
           <div class="c-btns">
-            <button class="c-btn c-btn-h" onclick="classify(this,'high')">HIGH</button>
-            <button class="c-btn c-btn-m" onclick="classify(this,'mod')">MOD</button>
-            <button class="c-btn c-btn-l" onclick="classify(this,'low')">LOW</button>
+            <button class="c-btn lv-green" onclick="classify(this,'public')" title="Public">🍎</button>
+            <button class="c-btn lv-amber" onclick="classify(this,'internal')" title="Internal">🍣</button>
+            <button class="c-btn lv-red" onclick="classify(this,'conf')" title="Confidential">🍄</button>
+            <button class="c-btn lv-dark" onclick="classify(this,'restricted')" title="Restricted">🐡</button>
           </div>
           <div class="classify-badge"></div>
         </div>
@@ -3415,9 +3553,10 @@
           <div class="classify-card-name">Unpublished Proposal</div>
           <div class="classify-card-desc">Draft that hasn't been submitted yet</div>
           <div class="c-btns">
-            <button class="c-btn c-btn-h" onclick="classify(this,'high')">HIGH</button>
-            <button class="c-btn c-btn-m" onclick="classify(this,'mod')">MOD</button>
-            <button class="c-btn c-btn-l" onclick="classify(this,'low')">LOW</button>
+            <button class="c-btn lv-green" onclick="classify(this,'public')" title="Public">🍎</button>
+            <button class="c-btn lv-amber" onclick="classify(this,'internal')" title="Internal">🍣</button>
+            <button class="c-btn lv-red" onclick="classify(this,'conf')" title="Confidential">🍄</button>
+            <button class="c-btn lv-dark" onclick="classify(this,'restricted')" title="Restricted">🐡</button>
           </div>
           <div class="classify-badge"></div>
         </div>
@@ -3427,9 +3566,10 @@
           <div class="classify-card-name">Award Total</div>
           <div class="classify-card-desc">Listed in a public award database</div>
           <div class="c-btns">
-            <button class="c-btn c-btn-h" onclick="classify(this,'high')">HIGH</button>
-            <button class="c-btn c-btn-m" onclick="classify(this,'mod')">MOD</button>
-            <button class="c-btn c-btn-l" onclick="classify(this,'low')">LOW</button>
+            <button class="c-btn lv-green" onclick="classify(this,'public')" title="Public">🍎</button>
+            <button class="c-btn lv-amber" onclick="classify(this,'internal')" title="Internal">🍣</button>
+            <button class="c-btn lv-red" onclick="classify(this,'conf')" title="Confidential">🍄</button>
+            <button class="c-btn lv-dark" onclick="classify(this,'restricted')" title="Restricted">🐡</button>
           </div>
           <div class="classify-badge"></div>
         </div>
@@ -3439,33 +3579,36 @@
           <div class="classify-card-name">AI Meeting Notes</div>
           <div class="classify-card-desc">Auto-summary of a project team call</div>
           <div class="c-btns">
-            <button class="c-btn c-btn-h" onclick="classify(this,'high')">HIGH</button>
-            <button class="c-btn c-btn-m" onclick="classify(this,'mod')">MOD</button>
-            <button class="c-btn c-btn-l" onclick="classify(this,'low')">LOW</button>
+            <button class="c-btn lv-green" onclick="classify(this,'public')" title="Public">🍎</button>
+            <button class="c-btn lv-amber" onclick="classify(this,'internal')" title="Internal">🍣</button>
+            <button class="c-btn lv-red" onclick="classify(this,'conf')" title="Confidential">🍄</button>
+            <button class="c-btn lv-dark" onclick="classify(this,'restricted')" title="Restricted">🐡</button>
           </div>
           <div class="classify-badge"></div>
         </div>
 
         <div class="classify-card">
-          <div class="classify-card-icon">📚</div>
-          <div class="classify-card-name">Published Article</div>
-          <div class="classify-card-desc">Peer-reviewed and in print</div>
+          <div class="classify-card-icon">🧪</div>
+          <div class="classify-card-name">Study Participant Records</div>
+          <div class="classify-card-desc">Names and health details</div>
           <div class="c-btns">
-            <button class="c-btn c-btn-h" onclick="classify(this,'high')">HIGH</button>
-            <button class="c-btn c-btn-m" onclick="classify(this,'mod')">MOD</button>
-            <button class="c-btn c-btn-l" onclick="classify(this,'low')">LOW</button>
+            <button class="c-btn lv-green" onclick="classify(this,'public')" title="Public">🍎</button>
+            <button class="c-btn lv-amber" onclick="classify(this,'internal')" title="Internal">🍣</button>
+            <button class="c-btn lv-red" onclick="classify(this,'conf')" title="Confidential">🍄</button>
+            <button class="c-btn lv-dark" onclick="classify(this,'restricted')" title="Restricted">🐡</button>
           </div>
           <div class="classify-badge"></div>
         </div>
 
         <div class="classify-card">
-          <div class="classify-card-icon">🔬</div>
-          <div class="classify-card-name">Confidential Research Data</div>
-          <div class="classify-card-desc">Protected by award terms or the IRB</div>
+          <div class="classify-card-icon">🛡️</div>
+          <div class="classify-card-name">Export-Controlled Data</div>
+          <div class="classify-card-desc">CUI from a defense-funded project</div>
           <div class="c-btns">
-            <button class="c-btn c-btn-h" onclick="classify(this,'high')">HIGH</button>
-            <button class="c-btn c-btn-m" onclick="classify(this,'mod')">MOD</button>
-            <button class="c-btn c-btn-l" onclick="classify(this,'low')">LOW</button>
+            <button class="c-btn lv-green" onclick="classify(this,'public')" title="Public">🍎</button>
+            <button class="c-btn lv-amber" onclick="classify(this,'internal')" title="Internal">🍣</button>
+            <button class="c-btn lv-red" onclick="classify(this,'conf')" title="Confidential">🍄</button>
+            <button class="c-btn lv-dark" onclick="classify(this,'restricted')" title="Restricted">🐡</button>
           </div>
           <div class="classify-badge"></div>
         </div>
@@ -3475,9 +3618,10 @@
           <div class="classify-card-name">Budget Justification</div>
           <div class="classify-card-desc">Draft for an upcoming proposal</div>
           <div class="c-btns">
-            <button class="c-btn c-btn-h" onclick="classify(this,'high')">HIGH</button>
-            <button class="c-btn c-btn-m" onclick="classify(this,'mod')">MOD</button>
-            <button class="c-btn c-btn-l" onclick="classify(this,'low')">LOW</button>
+            <button class="c-btn lv-green" onclick="classify(this,'public')" title="Public">🍎</button>
+            <button class="c-btn lv-amber" onclick="classify(this,'internal')" title="Internal">🍣</button>
+            <button class="c-btn lv-red" onclick="classify(this,'conf')" title="Confidential">🍄</button>
+            <button class="c-btn lv-dark" onclick="classify(this,'restricted')" title="Restricted">🐡</button>
           </div>
           <div class="classify-badge"></div>
         </div>
@@ -3493,7 +3637,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        One File, Many Kinds of Information
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="3" data-index="32">
+  <div class="slide bg-template" data-section="3" data-index="33">
     <div class="content">
       <div class="label">Section III · Risk Classification</div>
       <div class="heading" style="font-size:46px; margin-bottom:22px;">One File, Many Kinds of Information</div>
@@ -3508,16 +3652,16 @@
               <div class="mix-bar" style="width:94%;"></div>
               <div class="mix-bar" style="width:70%;"></div>
             </div>
-            <div class="mix-tag" data-step>Low</div>
+            <div class="mix-tag" data-step>Public</div>
           </div>
 
           <div class="mix-row lv-amber">
             <div class="mix-row-body">
-              <div class="mix-row-title">Preliminary Results <span>Unpublished findings</span></div>
+              <div class="mix-row-title">Project Timeline <span>Internal milestones</span></div>
               <div class="mix-bar" style="width:88%;"></div>
               <div class="mix-bar" style="width:76%;"></div>
             </div>
-            <div class="mix-tag" data-step>Moderate</div>
+            <div class="mix-tag" data-step>Internal</div>
           </div>
 
           <div class="mix-row lv-red">
@@ -3526,7 +3670,7 @@
               <div class="mix-bar" style="width:92%;"></div>
               <div class="mix-bar" style="width:58%;"></div>
             </div>
-            <div class="mix-tag" data-step>High</div>
+            <div class="mix-tag" data-step>Confidential</div>
           </div>
 
           <div class="mix-row lv-green">
@@ -3535,14 +3679,14 @@
               <div class="mix-bar" style="width:84%;"></div>
               <div class="mix-bar" style="width:64%;"></div>
             </div>
-            <div class="mix-tag" data-step>Low</div>
+            <div class="mix-tag" data-step>Public</div>
           </div>
         </div>
 
         <div class="mix-result" data-step>
           <div class="mix-arrow">→</div>
           <div class="mix-verdict">
-            <div class="mix-verdict-badge">Whole File: High</div>
+            <div class="mix-verdict-badge">Whole File: Confidential</div>
             <div class="mix-verdict-title">The most sensitive piece sets the level</div>
             <div class="mix-verdict-text">Handle the file at that level, or remove that piece before it goes into an AI tool.</div>
           </div>
@@ -3555,7 +3699,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        AI Meeting Assistants
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="3" data-index="33">
+  <div class="slide bg-template" data-section="3" data-index="34">
     <div class="content">
       <div class="label">Section III · Risk Classification</div>
       <div class="heading" style="font-size:46px; margin-bottom:20px;">Is AI Listening to Your Meeting?</div>
@@ -3582,30 +3726,26 @@
           <div class="meet-step" data-step>
             <div class="meet-step-num">1</div>
             <div>
-              <div class="meet-step-title">Notice</div>
-              <div class="meet-step-desc">AI note-takers watch calendars and join meetings on their own</div>
+              <div class="meet-step-title">Confirm approval</div>
+              <div class="meet-step-desc">Is the tool university-approved for what will be discussed?</div>
             </div>
           </div>
           <div class="meet-step" data-step>
             <div class="meet-step-num">2</div>
             <div>
-              <div class="meet-step-title">Ask</div>
-              <div class="meet-step-desc">Ask the host whether an AI tool is recording or summarizing</div>
+              <div class="meet-step-title">Follow consent rules</div>
+              <div class="meet-step-desc">Meet consent requirements before anything is recorded or transcribed</div>
             </div>
           </div>
           <div class="meet-step" data-step>
             <div class="meet-step-num">3</div>
             <div>
-              <div class="meet-step-title">Act</div>
-              <div class="meet-step-desc">If the topic is sensitive, request its removal or decline to join</div>
+              <div class="meet-step-title">Protect the output</div>
+              <div class="meet-step-desc">Recordings, transcripts, and summaries need the same protection as the discussion</div>
             </div>
           </div>
         </div>
 
-      </div>
-      <div class="callout" data-step style="--cc:#b06000; --cb:rgba(192,112,0,0.07);">
-        <div class="callout-icon">📜</div>
-        <div class="callout-text"><strong>Check the award.</strong> Award terms, program officers, or the IRB may forbid sharing research data outside secure institutional systems.</div>
       </div>
     </div>
   </div>
@@ -3613,7 +3753,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Institutional Classification Labels
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="3" data-index="34">
+  <div class="slide bg-template" data-section="3" data-index="35">
     <div class="content">
       <div class="label">Section III · Risk Classification</div>
       <div class="heading" style="font-size:46px; margin-bottom:22px;">Every Institution Draws Its Own Lines</div>
@@ -3665,9 +3805,9 @@
   <!-- ══════════════════════════════════════════════════════════════
        Free vs. Approved Accounts
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="3" data-index="35">
+  <div class="slide bg-template" data-section="3" data-index="36">
     <div class="content">
-      <div class="label">Section III · Risk Classification</div>
+      <div class="label">Section III · Responsible AI Use</div>
       <div class="quote-wrap">
         <div class="quote-accent"></div>
         <div class="quote-text">If you are not paying for the product,<br><em>you are the product.</em></div>
@@ -3675,14 +3815,23 @@
       </div>
       <div class="acct-grid">
         <div class="acct-card" data-step style="--ac:#b01010; --ab:rgba(176,16,16,0.07);">
-          <div class="acct-head"><span class="acct-icon">🆓</span> Free &amp; personal accounts</div>
-          <div class="acct-desc">Your prompts and uploads are the price of admission. They may be kept, reviewed, or used for training.</div>
+          <div class="acct-head"><span class="acct-icon">🆓</span> Public AI tools</div>
+          <div class="acct-list">
+            <div class="acct-item"><span class="acct-item-icon">📤</span><div><strong>No guarantee</strong> where your data is sent, saved, viewed, or used later</div></div>
+            <div class="acct-item"><span class="acct-item-icon">🚫</span><div><strong>No obligation</strong> to protect you or your institution</div></div>
+            <div class="acct-item"><span class="acct-item-icon">💸</span><div><strong>Your data is the payment:</strong> it may be kept or used for training</div></div>
+          </div>
           <div class="acct-rule">Assume everything you enter is public</div>
         </div>
         <div class="acct-card" data-step style="--ac:#1a7a1a; --ab:rgba(26,122,26,0.07);">
-          <div class="acct-head"><span class="acct-icon">🏛️</span> Institution-approved accounts</div>
-          <div class="acct-desc">A contract protects what you enter, but each tool is approved only for certain kinds of data.</div>
-          <div class="acct-rule">A license isn't permission for every kind of data</div>
+          <div class="acct-head"><span class="acct-icon">🏛️</span> University-approved tools</div>
+          <div class="acct-list">
+            <div class="acct-item"><span class="acct-item-icon">📝</span><div><strong>Data agreement</strong> that can limit training, retention, access, and sharing</div></div>
+            <div class="acct-item"><span class="acct-item-icon">🔍</span><div><strong>Reviewed handling,</strong> even when it runs on vendor systems</div></div>
+            <div class="acct-item"><span class="acct-item-icon">⚖️</span><div><strong>Accountability:</strong> the university has recourse if something goes wrong</div></div>
+            <div class="acct-item"><span class="acct-item-icon">✅</span><div><strong>Compliance</strong> with FERPA, HIPAA, export control, and sponsor rules</div></div>
+          </div>
+          <div class="acct-rule">Protected only for the data it's approved for</div>
         </div>
       </div>
     </div>
@@ -3691,7 +3840,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Case Study: Arizona State University
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="3" data-index="36">
+  <div class="slide bg-template" data-section="3" data-index="37">
     <div class="content">
       <div class="label">Section III · Case Study</div>
       <div class="heading" style="font-size:46px; margin-bottom:22px;">How It Works at Arizona State University</div>
@@ -3752,7 +3901,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Decision Process: Four Questions
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="3" data-index="37">
+  <div class="slide bg-template" data-section="3" data-index="38">
     <div class="content">
       <div class="label">Section III · Risk Classification</div>
       <div class="heading" style="font-size:46px; margin-bottom:18px;">Four Questions Before You Upload</div>
@@ -3792,7 +3941,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Section III Takeaways
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="3" data-index="38">
+  <div class="slide bg-template" data-section="3" data-index="39">
     <div class="content">
       <div class="label">Section III · Takeaways</div>
       <div class="heading">What This Means for You</div>
@@ -3802,7 +3951,7 @@
       </div>
       <ul class="takeaway-list">
         <li data-step>Classify by contents and context — one file can hold several kinds of data, and the most sensitive sets the level</li>
-        <li data-step>Treat free AI tools as public — and remember a license or local server doesn't cover every type of data</li>
+        <li data-step>Public AI tools owe you nothing — use university-approved tools, and only for the data they're approved for</li>
         <li data-step>Know your institution's labels, approved tools, and who to ask before you upload</li>
       </ul>
     </div>
@@ -3812,7 +3961,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Q & A
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="4" data-index="39">
+  <div class="slide bg-template" data-section="4" data-index="40">
     <div class="qa-wrap">
       <div class="qa-bg-mark">?</div>
       <div class="qa-label">Conclusion</div>
@@ -3831,7 +3980,7 @@
        QR (evaluation_survey.png) and bit.ly/3NwQpTi both open
        surveymonkey.com/r/AI4RAgeneral (from ui-insight/REACHWorkshop2026)
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="4" data-index="40">
+  <div class="slide bg-template" data-section="4" data-index="41">
     <div class="content">
       <div class="label">Before You Go</div>
       <div class="heading" style="margin-bottom:10px;">AI4RA External Evaluation</div>
@@ -3861,7 +4010,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Contact Information
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="4" data-index="41">
+  <div class="slide bg-template" data-section="4" data-index="42">
     <div class="content">
       <div class="label">Thank You</div>
       <div class="heading">Get in Touch</div>
@@ -3982,7 +4131,7 @@
     const card  = btn.closest('.classify-card');
     const badge = card.querySelector('.classify-badge');
     card.dataset.level = level;
-    badge.textContent = { high: 'HIGH RISK', mod: 'MODERATE', low: 'LOW RISK' }[level];
+    badge.textContent = { public: 'Public', internal: 'Internal', conf: 'Confidential', restricted: 'Restricted' }[level];
   }
 
   /* ── Multiple Choice interaction ────────────────────────────── */
