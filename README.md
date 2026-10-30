@@ -11,11 +11,13 @@ Hosted on GitHub Pages at: **[your-github-pages-url]**
 |---|---------|--------|
 | — | Introduction | 1 – Title, 2 – Presenters, 3 – Overview |
 | 01 | Models and Data Security | 4 – Section divider, 5 – True/False interactive, 6 – What is an AI Model? (graphic), 7 – Neural Networks (graphic), 8 – Inspired by Biology (graphic), 9 – Training process flow, 10 – Models Deployed for Inference (graphic), 11 – Training vs. Inference (animated), 12 – How AI Writes: next-word prediction (interactive), 13 – Model inversion attack flow, 14 – Response Mining (graphic), 15 – Takeaways |
-| 02 | Prompt Injection Security | 16 – Section divider, 17 – Resume ranking interactive, 18 – Resume attack reveal, 19 – Prompt anatomy diagram, 20 – Prompt injection examples, 21 – Prompt Injection with Agentic AI (graphic), 22 – Takeaways, 23 – Interactive Game (placeholder: ARC puzzle intro) |
-| 03 | Risk Classification | 24 – Section divider, 25 – Shadow AI interactive, 26 – Classify data risk (interactive), 27 – One file, many kinds of information, 28 – AI meeting assistants, 29 – Institutional classification labels (ASU / Big 10 School / Ivy League School), 30 – Free vs. approved accounts ("you are the product"), 31 – Case study: ASU, 32 – Four questions before you upload, 33 – Takeaways |
-| — | Conclusion | 34 – Q&A, 35 – AI4RA External Evaluation (survey QR code), 36 – Contact information |
+| 02 | Prompt Injection Security | 16 – Section divider, 17 – Resume ranking interactive, 18 – Resume attack reveal, 19 – Prompt anatomy diagram, 20 – Prompt injection examples, 21 – Prompt Injection with Agentic AI (graphic), 22 – Takeaways, 23 – Interactive Game: Chat (story choice, click to reveal model drawings), 24 – Chat-2 (same pictures, different ending), 25 – Story × ending cross-comparison, 26 – What happened to the third applicant? (compliance puzzle, impossible as posed), 27 – Hide one picture instead of two (mask-6 / mask-7 results), 28 – Your turn: ncura-2 with Narrate QR code and invite code, 29 – We talk in stories |
+| 03 | Risk Classification | 30 – Section divider, 31 – Shadow AI interactive, 32 – Classify data risk (interactive), 33 – One file, many kinds of information, 34 – AI meeting assistants, 35 – Institutional classification labels (ASU / Big 10 School / Ivy League School), 36 – Free vs. approved accounts ("you are the product"), 37 – Case study: ASU, 38 – Four questions before you upload, 39 – Takeaways |
+| — | Conclusion | 40 – Q&A, 41 – AI4RA External Evaluation (survey QR code), 42 – Contact information |
 
-**Total:** 36 slides ✓
+**Total:** 42 slides ✓
+
+The Section II Interactive Game (slides 23–29) is presented by Bert Baumgaertner. Its grids are drawn in the page from `data-grid` attributes; what each model drew, and the counts on slides 25–28, come from the JSON block `<script id="narc-data">` (between the `narc-data:start` and `narc-data:end` comments, just above the main script), taken from the AI Review runs on [narc.insight.uidaho.edu](https://narc.insight.uidaho.edu). Bert refreshes that block before the talk. Slide 28 carries a QR code (`narrate_qr.svg`, generated, links to narc.insight.uidaho.edu/narrate) and the NCURA invite code for Narrate. Clicking a story choice reveals the drawings; Space/→ reveals what actually happened.
 
 Section III is presented by Lucas Marshall. It was built from his outline, which is summarized at the top of the Section 3 part of `slides.md`.
 

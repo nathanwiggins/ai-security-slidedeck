@@ -1978,6 +1978,258 @@
       z-index: 500;
     }
 
+    /* ════════════════════════════════════════════════════════════════
+       Stories as Input (NARC puzzles, Section II)
+    ════════════════════════════════════════════════════════════════ */
+    .narc-row { display: flex; gap: 44px; align-items: flex-start; }
+
+    .narc-left { width: 560px; flex-shrink: 0; display: flex; flex-direction: column; gap: 18px; }
+
+    .narc-strip { display: flex; align-items: center; gap: 12px; }
+
+    .narc-frame { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+
+    .narc-frame-label {
+      font-size: 13px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: #888;
+    }
+
+    .narc-arrow { font-size: 26px; font-weight: 700; color: #b06000; }
+
+    .narc-grid {
+      --cell: 34px;
+      display: grid;
+      gap: 2px;
+      padding: 2px;
+      background: #555;
+      border-radius: 4px;
+    }
+
+    .narc-cell { width: var(--cell); height: var(--cell); border-radius: 2px; }
+
+    .narc-slot { position: relative; }
+
+    .narc-mask {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: #fffbeb; border: 3px dashed #f59e0b; border-radius: 4px;
+      font-size: 40px; font-weight: 700; color: #b45309;
+      transition: opacity 0.38s ease;
+    }
+
+    /* The hidden frame is revealed with the slide's "what happened" step */
+    .slide:has(.narc-truth.step-visible) .narc-mask { opacity: 0; }
+
+    .story-start {
+      font-size: 22px; line-height: 1.45; color: #222;
+      background: rgba(26,58,143,0.05);
+      border-left: 5px solid #1a3a8f;
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+    }
+
+    .story-start-label {
+      display: block; font-size: 13px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: #1a3a8f; margin-bottom: 6px;
+    }
+
+    .story-opts { flex: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+
+    .story-opt { display: flex; flex-direction: column; gap: 12px; }
+
+    .story-btn {
+      display: flex; align-items: flex-start; gap: 14px;
+      min-height: 118px;
+      padding: 16px 18px;
+      border: 2.5px solid #ddd; border-radius: 14px; background: #fff;
+      cursor: pointer; text-align: left;
+      font-family: Arial, sans-serif;
+      transition: all 0.22s ease;
+    }
+
+    .story-btn:hover { border-color: #b06000; background: rgba(176,96,0,0.04); transform: translateY(-2px); }
+
+    .story-btn.is-picked { border-color: #b06000; background: rgba(176,96,0,0.07); }
+
+    .story-btn-letter {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: rgba(176,96,0,0.12); color: #b06000;
+      font-size: 20px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+
+    .story-btn-text { font-size: 21px; color: #333; line-height: 1.35; }
+
+    .story-btn-text em { font-style: normal; color: #888; }
+
+    .story-drawn {
+      display: none;
+      flex-wrap: wrap; gap: 10px;
+      animation: fadeSlideUp 0.4s ease forwards;
+    }
+
+    .story-btn.is-picked + .story-drawn { display: flex; }
+
+    .drawn-group {
+      display: flex; flex-direction: column; align-items: center; gap: 5px;
+      padding: 8px 8px 6px;
+      border: 1.5px solid #e0e0e0; border-radius: 10px; background: #fff;
+      min-width: 96px;
+    }
+
+    .drawn-group .narc-grid { --cell: 14px; gap: 1px; padding: 1px; }
+
+    .narc-left .narc-truth { margin-top: 0; font-size: 22px; }
+
+    .drawn-count { font-size: 16px; font-weight: 700; color: #333; }
+
+    .drawn-mark { display: none; font-size: 15px; font-weight: 700; }
+
+    .slide:has(.narc-truth.step-visible) .drawn-mark { display: block; }
+
+    .drawn-group.is-right .drawn-mark { color: #1a7a1a; }
+    .drawn-group.is-wrong .drawn-mark { color: #b01010; }
+    .slide:has(.narc-truth.step-visible) .drawn-group.is-right { border-color: #1a7a1a; background: rgba(26,122,26,0.06); }
+
+    .drawn-group.is-blank .narc-grid { opacity: 0.35; }
+
+    .drawn-pending {
+      font-size: 18px; font-weight: 700; color: #b06000;
+      background: rgba(176,96,0,0.07); border: 1.5px dashed #b06000; border-radius: 10px;
+      padding: 10px 14px;
+    }
+
+    .narc-truth {
+      margin-top: 18px;
+      font-size: 24px; color: #222; line-height: 1.45;
+      background: rgba(26,122,26,0.06);
+      border-left: 5px solid #1a7a1a;
+      border-radius: 0 12px 12px 0;
+      padding: 14px 22px;
+    }
+
+    .narc-matrix { border-collapse: separate; border-spacing: 10px; font-size: 24px; margin: -10px 0 8px -10px; }
+
+    .narc-matrix th {
+      font-size: 20px; color: #555; font-weight: 700; text-align: left;
+      padding: 6px 14px;
+    }
+
+    .narc-matrix td {
+      padding: 14px 20px; border-radius: 12px;
+      background: #fff; border: 1.5px solid #e0e0e0;
+    }
+
+    .narc-matrix td.story { width: 640px; color: #333; font-size: 21px; line-height: 1.35; }
+
+    .narc-matrix td.count { width: 300px; text-align: center; font-size: 30px; font-weight: 700; color: #b01010; }
+
+    .narc-matrix td.count.hit { color: #1a7a1a; background: rgba(26,122,26,0.06); border-color: rgba(26,122,26,0.4); }
+
+    .narc-matrix td.count small { display: block; font-size: 16px; font-weight: 400; color: #666; margin-top: 2px; }
+
+    .narc-callout {
+      font-size: 26px; font-weight: 700; color: #1a3a8f; line-height: 1.4;
+      background: rgba(26,58,143,0.06);
+      border-left: 6px solid #1a3a8f;
+      border-radius: 0 14px 14px 0;
+      padding: 18px 26px;
+    }
+
+    .narc-challenge { display: flex; flex-direction: column; gap: 18px; flex: 1; min-width: 0; }
+
+    .narc-challenge-row { display: flex; gap: 36px; align-items: flex-start; }
+
+    .narc-story-reveal { background: rgba(26,58,143,0.05); border-left-color: #1a3a8f; }
+
+    .narc-turn { background: rgba(26,58,143,0.05); border-left-color: #1a3a8f; }
+
+    .narc-hidden-model { outline: 3px dashed #f59e0b; outline-offset: 3px; }
+
+    .narc-wide .narc-grid { --cell: 30px; }
+
+    .narc-wide .narc-strip { gap: 10px; }
+
+    .narc-hidden-label { color: #b45309; letter-spacing: 0.06em; white-space: nowrap; }
+
+    .comp-matrix td.story { width: 470px; }
+
+    .comp-matrix td.count { width: 220px; }
+
+    .comp-matrix td.names { width: 330px; font-size: 21px; color: #333; line-height: 1.35; }
+
+    .mini-strip { gap: 4px; }
+
+    .mini-strip .narc-grid { --cell: 9px; gap: 1px; padding: 1px; border-radius: 2px; }
+
+    .mini-strip .narc-arrow { font-size: 12px; }
+
+    .mini-strip .narc-mask { font-size: 18px; border-width: 2px; }
+
+    .mini-caption { font-size: 18px; color: #333; margin-top: 6px; }
+
+    .narrate-card {
+      width: 400px; flex-shrink: 0;
+      display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center;
+      background: #fff; border-radius: 16px;
+      border: 1.5px solid #e0e0e0; border-top: 4px solid #b06000;
+      padding: 18px 22px 16px;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+    }
+
+    .narrate-qr { width: 210px; height: 210px; display: block; }
+
+    .narrate-card-title { font-size: 24px; font-weight: 700; color: #111; }
+
+    .narrate-card-text { font-size: 18px; color: #444; line-height: 1.4; }
+
+    .narrate-card-url { font-size: 19px; font-weight: 700; color: #1a3a8f; }
+
+    .narrate-card-code {
+      font-family: 'Courier New', monospace; font-size: 34px; font-weight: 700; color: #111;
+      letter-spacing: 0.06em;
+      background: rgba(176,96,0,0.08); border: 2px dashed #b06000; border-radius: 10px;
+      padding: 6px 18px 8px;
+    }
+
+    .narrate-card-code span {
+      display: block; font-family: Arial, sans-serif; font-size: 12px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: #b06000; margin-bottom: 2px;
+    }
+
+    .narrate-card-note { font-size: 14px; color: #666; line-height: 1.4; }
+
+    .narc-challenge .narc-grid { --cell: 22px; gap: 2px; padding: 2px; }
+
+    .narc-challenge .narc-strip { gap: 10px; }
+
+    .narc-challenge .narc-arrow { font-size: 18px; }
+
+    .narc-challenge .narc-strip { gap: 6px; }
+
+    .narc-prompt {
+      font-size: 26px; color: #222; line-height: 1.45;
+      background: rgba(176,96,0,0.06);
+      border-left: 5px solid #b06000;
+      border-radius: 0 12px 12px 0;
+      padding: 16px 24px;
+    }
+
+    .narc-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+
+    .narc-card {
+      background: #fff; border-radius: 14px;
+      border: 1.5px solid #e0e0e0; border-top: 4px solid #1a3a8f;
+      padding: 22px 26px;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+    }
+
+    .narc-card h3 { font-size: 26px; color: #111; margin-bottom: 12px; }
+
+    .narc-card p { font-size: 22px; color: #444; line-height: 1.5; }
+
+    .narc-card p + p { margin-top: 10px; }
+
     /* ── Print Styles for PDF Export ──────────────────────────────── */
 @media print {
   /* Reset body and allow scrolling */
@@ -2824,22 +3076,271 @@
 
 
   <!-- ══════════════════════════════════════════════════════════════
-       Interactive Game (placeholder: ARC puzzle intro)
+       Stories as Input: Chat (NARC puzzle)
+       Click a story to reveal what the 9 models drew; Space/→ reveals what happened.
+       Drawings come from #narc-data (narc.insight.uidaho.edu, AI Review runs).
   ══════════════════════════════════════════════════════════════════ -->
   <div class="slide bg-template" data-section="2" data-index="22">
     <div class="content">
-      <div class="label">Section II · Prompt Injection Security</div>
-      <div class="heading">Interactive Game</div>
-      <div style="flex:1; display:flex; align-items:center; justify-content:center; border:3px dashed rgba(26,58,143,0.3); border-radius:20px; font-size:34px; font-style:italic; color:#888;">
-        Simple ARC puzzle introduction here
+      <div class="label">Section II · Interactive Game</div>
+      <div class="heading" style="font-size:44px; margin-bottom:6px;">Same pictures. Which story?</div>
+      <div class="slide-subhead" style="margin-top:0; margin-bottom:18px;">A NARC puzzle: an AI model sees three pictures and a story, and has to draw the fourth picture exactly.</div>
+      <div class="narc-row">
+        <div class="narc-left">
+          <div class="narc-strip">
+            <div class="narc-frame"><div class="narc-grid" data-grid="[[0,0,0],[5,0,7],[5,0,7]]"></div><div class="narc-frame-label">1</div></div>
+            <div class="narc-arrow">→</div>
+            <div class="narc-frame"><div class="narc-grid" data-grid="[[0,0,0],[0,0,7],[5,0,7]]"></div><div class="narc-frame-label">2</div></div>
+            <div class="narc-arrow">→</div>
+            <div class="narc-frame"><div class="narc-grid" data-grid="[[5,0,0],[5,0,7],[5,0,7]]"></div><div class="narc-frame-label">3</div></div>
+            <div class="narc-arrow">→</div>
+            <div class="narc-frame"><div class="narc-slot"><div class="narc-grid" data-truth="chat"></div><div class="narc-mask">?</div></div><div class="narc-frame-label">4</div></div>
+          </div>
+          <div class="story-start"><span class="story-start-label">Every story starts</span>Ally and Bob met to chat. Ally became sad. After some encouraging words from Bob, Ally became happy. &hellip;</div>
+          <div class="narc-truth" data-step>What actually happened: Bob&rsquo;s bar rose too. A drawing counts only if every square is the right color.</div>
+        </div>
+        <div class="story-opts" data-puzzle="chat">
+          <div class="story-opt">
+            <button class="story-btn" data-cond="grids" onclick="storyPick(this)"><div class="story-btn-letter">A</div><div class="story-btn-text"><em>No story.</em> Pictures only.</div></button>
+            <div class="story-drawn"></div>
+          </div>
+          <div class="story-opt">
+            <button class="story-btn" data-cond="happy" onclick="storyPick(this)"><div class="story-btn-letter">B</div><div class="story-btn-text">&hellip; This made Bob happy too.</div></button>
+            <div class="story-drawn"></div>
+          </div>
+          <div class="story-opt">
+            <button class="story-btn" data-cond="sad" onclick="storyPick(this)"><div class="story-btn-letter">C</div><div class="story-btn-text">&hellip; But Bob, being the jealous type, then became sad.</div></button>
+            <div class="story-drawn"></div>
+          </div>
+        </div>
       </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       Stories as Input: Chat-2 (same pictures, different ending)
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="2" data-index="23">
+    <div class="content">
+      <div class="label">Section II · Interactive Game</div>
+      <div class="heading" style="font-size:44px; margin-bottom:6px;">Same pictures. Different ending.</div>
+      <div class="slide-subhead" style="margin-top:0; margin-bottom:18px;">Chat-2 shows the model the same three pictures. This time, Bob really did end up sad.</div>
+      <div class="narc-row">
+        <div class="narc-left">
+          <div class="narc-strip">
+            <div class="narc-frame"><div class="narc-grid" data-grid="[[0,0,0],[5,0,7],[5,0,7]]"></div><div class="narc-frame-label">1</div></div>
+            <div class="narc-arrow">→</div>
+            <div class="narc-frame"><div class="narc-grid" data-grid="[[0,0,0],[0,0,7],[5,0,7]]"></div><div class="narc-frame-label">2</div></div>
+            <div class="narc-arrow">→</div>
+            <div class="narc-frame"><div class="narc-grid" data-grid="[[5,0,0],[5,0,7],[5,0,7]]"></div><div class="narc-frame-label">3</div></div>
+            <div class="narc-arrow">→</div>
+            <div class="narc-frame"><div class="narc-slot"><div class="narc-grid" data-truth="chat_2"></div><div class="narc-mask">?</div></div><div class="narc-frame-label">4</div></div>
+          </div>
+          <div class="story-start"><span class="story-start-label">Every story starts</span>Ally and Bob met to chat. Ally became sad. After some encouraging words from Bob, Ally became happy. &hellip;</div>
+          <div class="narc-truth" data-step>What actually happened: Bob&rsquo;s bar dropped. The models got exactly the same input as on the last slide, yet many drew something different this time. And now a different ending is right.</div>
+        </div>
+        <div class="story-opts" data-puzzle="chat_2">
+          <div class="story-opt">
+            <button class="story-btn" data-cond="grids" onclick="storyPick(this)"><div class="story-btn-letter">A</div><div class="story-btn-text"><em>No story.</em> Pictures only.</div></button>
+            <div class="story-drawn"></div>
+          </div>
+          <div class="story-opt">
+            <button class="story-btn" data-cond="happy" onclick="storyPick(this)"><div class="story-btn-letter">B</div><div class="story-btn-text">&hellip; This made Bob happy too.</div></button>
+            <div class="story-drawn"></div>
+          </div>
+          <div class="story-opt">
+            <button class="story-btn" data-cond="sad" onclick="storyPick(this)"><div class="story-btn-letter">C</div><div class="story-btn-text">&hellip; But Bob, being the jealous type, then became sad.</div></button>
+            <div class="story-drawn"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       Stories as Input: the cross-comparison (counts filled from #narc-data)
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="2" data-index="24">
+    <div class="content">
+      <div class="label">Section II · Interactive Game</div>
+      <div class="heading" style="font-size:44px; margin-bottom:18px;">The story decides. Only the facts can check it.</div>
+      <table class="narc-matrix">
+        <thead>
+          <tr><th>Story given to the model</th><th>Chat: Bob ended happy</th><th>Chat-2: Bob ended sad</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="story"><em style="font-style:normal;color:#888;">No story.</em> Pictures only.</td><td class="count" data-narc-count="chat:grids"></td><td class="count" data-narc-count="chat_2:grids"></td></tr>
+          <tr><td class="story">&hellip; This made Bob happy too.</td><td class="count" data-narc-count="chat:happy"></td><td class="count" data-narc-count="chat_2:happy"></td></tr>
+          <tr><td class="story">&hellip; But Bob, being the jealous type, then became sad.</td><td class="count" data-narc-count="chat:sad"></td><td class="count" data-narc-count="chat_2:sad"></td></tr>
+        </tbody>
+      </table>
+      <div class="narc-callout" data-step>The pictures were identical. The story decided what the models drew. Whether that was right depended on what actually happened, and the model had no way to check.</div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       Interactive Game: the compliance puzzle (ncura-1_rev), pictures 6 and 7 hidden.
+       Nothing in the pictures or the story says whether yellow got a signature.
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="2" data-index="25">
+    <div class="content">
+      <div class="label">Section II · Interactive Game</div>
+      <div class="heading" style="font-size:44px; margin-bottom:16px;">What happened to the third applicant?</div>
+      <div class="narc-challenge narc-wide">
+        <div class="narc-strip">
+          <div class="narc-frame"><div class="narc-grid" data-grid="[[1,0,0,0,0],[3,0,0,0,6],[4,0,0,0,0],[5,5,0,5,5],[0,0,0,0,0]]"></div><div class="narc-frame-label">1</div></div>
+          <div class="narc-arrow">→</div>
+          <div class="narc-frame"><div class="narc-grid" data-grid="[[0,0,0,0,0],[3,0,0,1,6],[4,0,0,0,0],[5,5,0,5,5],[0,0,0,0,0]]"></div><div class="narc-frame-label">2</div></div>
+          <div class="narc-arrow">→</div>
+          <div class="narc-frame"><div class="narc-grid" data-grid="[[0,0,0,0,0],[3,0,0,0,6],[4,0,0,0,0],[5,5,0,5,5],[0,0,0,0,1]]"></div><div class="narc-frame-label">3</div></div>
+          <div class="narc-arrow">→</div>
+          <div class="narc-frame"><div class="narc-grid" data-grid="[[0,0,0,0,0],[0,0,0,0,6],[4,0,0,0,0],[5,5,3,5,5],[0,0,0,0,1]]"></div><div class="narc-frame-label">4</div></div>
+          <div class="narc-arrow">→</div>
+          <div class="narc-frame"><div class="narc-grid" data-grid="[[0,0,0,0,0],[0,0,0,0,6],[4,0,0,0,0],[5,5,0,5,5],[3,0,0,0,1]]"></div><div class="narc-frame-label">5</div></div>
+          <div class="narc-arrow">→</div>
+          <div class="narc-frame"><div class="narc-slot"><div class="narc-grid" data-grid="[[0,0,0,0,0],[0,0,0,0,6],[0,0,0,0,0],[5,5,4,5,5],[3,0,0,0,1]]"></div><div class="narc-mask">?</div></div><div class="narc-frame-label">6</div></div>
+          <div class="narc-arrow">→</div>
+          <div class="narc-frame"><div class="narc-slot"><div class="narc-grid" data-grid="[[0,0,0,0,0],[0,0,0,0,6],[0,0,0,0,0],[5,5,0,5,5],[3,4,0,0,1]]"></div><div class="narc-mask">?</div></div><div class="narc-frame-label">7</div></div>
+        </div>
+        <div class="narc-prompt">Each colored square is an application. Watch blue, then green. What happens to yellow in pictures 6 and 7?</div>
+        <div class="narc-prompt narc-story-reveal" data-step><strong>Our story:</strong> &ldquo;If you don&rsquo;t get a signature for your application, you will fail to comply with the instructions and your application will not be considered.&rdquo;</div>
+        <div class="narc-truth" data-step>Yellow skipped the signature, like green. But nothing in the pictures or the story says so. With both pictures hidden, the puzzle is impossible: <span data-narc-comp="ncura-1_rev:original"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       Interactive Game: hide one picture instead of two (ncura-1_rev mask-6 / mask-7)
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="2" data-index="26">
+    <div class="content">
+      <div class="label">Section II · Interactive Game</div>
+      <div class="heading" style="font-size:44px; margin-bottom:6px;">Hide one picture instead of two</div>
+      <div class="slide-subhead" style="margin-top:0; margin-bottom:14px;">Same puzzle, same story. Now the pictures hold enough to work it out.</div>
+      <table class="narc-matrix comp-matrix">
+        <thead>
+          <tr><th>Hidden from the model</th><th>Pictures only</th><th>With our story</th><th>The story made the difference for</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="story">
+              <div class="narc-strip mini-strip">
+                <div class="narc-frame"><div class="narc-grid" data-grid="[[1,0,0,0,0],[3,0,0,0,6],[4,0,0,0,0],[5,5,0,5,5],[0,0,0,0,0]]"></div></div>
+                <div class="narc-arrow">→</div>
+                <div class="narc-frame"><div class="narc-grid" data-grid="[[0,0,0,0,0],[3,0,0,1,6],[4,0,0,0,0],[5,5,0,5,5],[0,0,0,0,0]]"></div></div>
+                <div class="narc-arrow">→</div>
+                <div class="narc-frame"><div class="narc-grid" data-grid="[[0,0,0,0,0],[3,0,0,0,6],[4,0,0,0,0],[5,5,0,5,5],[0,0,0,0,1]]"></div></div>
+                <div class="narc-arrow">→</div>
+                <div class="narc-frame"><div class="narc-grid" data-grid="[[0,0,0,0,0],[0,0,0,0,6],[4,0,0,0,0],[5,5,3,5,5],[0,0,0,0,1]]"></div></div>
+                <div class="narc-arrow">→</div>
+                <div class="narc-frame"><div class="narc-grid" data-grid="[[0,0,0,0,0],[0,0,0,0,6],[4,0,0,0,0],[5,5,0,5,5],[3,0,0,0,1]]"></div></div>
+                <div class="narc-arrow">→</div>
+                <div class="narc-frame"><div class="narc-slot"><div class="narc-grid" data-grid="[[0,0,0,0,0],[0,0,0,0,6],[0,0,0,0,0],[5,5,4,5,5],[3,0,0,0,1]]"></div><div class="narc-mask">?</div></div></div>
+                <div class="narc-arrow">→</div>
+                <div class="narc-frame"><div class="narc-grid" data-grid="[[0,0,0,0,0],[0,0,0,0,6],[0,0,0,0,0],[5,5,0,5,5],[3,4,0,0,1]]"></div></div>
+              </div>
+              <div class="mini-caption">Picture 6: yellow at the gap</div>
+            </td>
+            <td class="count" data-narc-comp-count="ncura-1_rev:mask-6:grids"></td>
+            <td class="count" data-narc-comp-count="ncura-1_rev:mask-6:story"></td>
+            <td class="names" data-narc-comp-names="ncura-1_rev:mask-6"></td>
+          </tr>
+          <tr>
+            <td class="story">
+              <div class="narc-strip mini-strip">
+                <div class="narc-frame"><div class="narc-grid" data-grid="[[1,0,0,0,0],[3,0,0,0,6],[4,0,0,0,0],[5,5,0,5,5],[0,0,0,0,0]]"></div></div>
+                <div class="narc-arrow">→</div>
+                <div class="narc-frame"><div class="narc-grid" data-grid="[[0,0,0,0,0],[3,0,0,1,6],[4,0,0,0,0],[5,5,0,5,5],[0,0,0,0,0]]"></div></div>
+                <div class="narc-arrow">→</div>
+                <div class="narc-frame"><div class="narc-grid" data-grid="[[0,0,0,0,0],[3,0,0,0,6],[4,0,0,0,0],[5,5,0,5,5],[0,0,0,0,1]]"></div></div>
+                <div class="narc-arrow">→</div>
+                <div class="narc-frame"><div class="narc-grid" data-grid="[[0,0,0,0,0],[0,0,0,0,6],[4,0,0,0,0],[5,5,3,5,5],[0,0,0,0,1]]"></div></div>
+                <div class="narc-arrow">→</div>
+                <div class="narc-frame"><div class="narc-grid" data-grid="[[0,0,0,0,0],[0,0,0,0,6],[4,0,0,0,0],[5,5,0,5,5],[3,0,0,0,1]]"></div></div>
+                <div class="narc-arrow">→</div>
+                <div class="narc-frame"><div class="narc-grid" data-grid="[[0,0,0,0,0],[0,0,0,0,6],[0,0,0,0,0],[5,5,4,5,5],[3,0,0,0,1]]"></div></div>
+                <div class="narc-arrow">→</div>
+                <div class="narc-frame"><div class="narc-slot"><div class="narc-grid" data-grid="[[0,0,0,0,0],[0,0,0,0,6],[0,0,0,0,0],[5,5,0,5,5],[3,4,0,0,1]]"></div><div class="narc-mask">?</div></div></div>
+              </div>
+              <div class="mini-caption">Picture 7: where yellow ends up</div>
+            </td>
+            <td class="count" data-narc-comp-count="ncura-1_rev:mask-7:grids"></td>
+            <td class="count" data-narc-comp-count="ncura-1_rev:mask-7:story"></td>
+            <td class="names" data-narc-comp-names="ncura-1_rev:mask-7"></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="narc-callout" data-step>Narratives can help some models. Others don&rsquo;t need the story, and for one the story got in the way. When the pictures held too little, no story we gave could rescue it.</div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       Interactive Game: your turn (ncura-2). Its story settles pictures 6 and 7,
+       yet every model failed. The room sees the answer, as in Narrate.
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="2" data-index="27">
+    <div class="content">
+      <div class="label">Section II · Interactive Game · Your Turn</div>
+      <div class="heading" style="font-size:44px; margin-bottom:16px;">Now the story says it. Write a better one.</div>
+      <div class="narc-challenge-row">
+      <div class="narc-challenge">
+        <div class="narc-strip">
+          <div class="narc-frame"><div class="narc-grid" data-grid="[[1,0,0,0,0],[3,0,0,0,6],[4,0,0,0,0],[5,5,0,5,5],[0,0,0,0,0]]"></div><div class="narc-frame-label">1</div></div>
+          <div class="narc-arrow">→</div>
+          <div class="narc-frame"><div class="narc-grid" data-grid="[[0,0,0,0,0],[3,0,0,1,6],[4,0,0,0,0],[5,5,0,5,5],[0,0,0,0,0]]"></div><div class="narc-frame-label">2</div></div>
+          <div class="narc-arrow">→</div>
+          <div class="narc-frame"><div class="narc-grid" data-grid="[[0,0,0,0,0],[3,0,0,0,6],[4,0,0,0,0],[5,5,0,5,5],[0,0,0,0,1]]"></div><div class="narc-frame-label">3</div></div>
+          <div class="narc-arrow">→</div>
+          <div class="narc-frame"><div class="narc-grid" data-grid="[[0,0,0,0,0],[0,0,0,0,6],[4,0,0,0,0],[5,5,3,5,5],[0,0,0,0,1]]"></div><div class="narc-frame-label">4</div></div>
+          <div class="narc-arrow">→</div>
+          <div class="narc-frame"><div class="narc-grid" data-grid="[[0,0,0,0,0],[0,0,0,0,6],[4,0,0,0,0],[5,5,0,5,5],[3,0,0,0,1]]"></div><div class="narc-frame-label">5</div></div>
+          <div class="narc-arrow">→</div>
+          <div class="narc-frame"><div class="narc-grid narc-hidden-model" data-grid="[[0,0,0,0,0],[0,0,0,0,6],[0,0,0,0,0],[5,5,4,5,5],[3,0,0,0,1]]"></div><div class="narc-frame-label narc-hidden-label">6 · hidden</div></div>
+          <div class="narc-arrow">→</div>
+          <div class="narc-frame"><div class="narc-grid narc-hidden-model" data-grid="[[0,0,0,0,0],[0,0,0,0,6],[0,0,0,0,0],[5,5,0,5,5],[3,4,0,0,1]]"></div><div class="narc-frame-label narc-hidden-label">7 · hidden</div></div>
+        </div>
+        <div class="narc-prompt"><strong>We added one sentence:</strong> &ldquo;The third application was not, unfortunately, considered.&rdquo; That settles pictures 6 and 7. Yet <span data-narc-comp="ncura-2:original"></span></div>
+        <div class="narc-prompt narc-turn">With a neighbor: you can see what happens (pictures 6 and 7, outlined, are hidden from the model). Write one or two sentences that would get a model to draw 6 and 7 exactly. Tell what happens. Don&rsquo;t list squares or coordinates.</div>
+      </div>
+      <div class="narrate-card">
+        <img class="narrate-qr" src="narrate_qr.svg" alt="QR code for narc.insight.uidaho.edu/narrate" />
+        <div class="narrate-card-title">Keep going after the session</div>
+        <div class="narrate-card-text">Write stories for NARC puzzles and test them on a real model.</div>
+        <div class="narrate-card-url">narc.insight.uidaho.edu/narrate</div>
+        <div class="narrate-card-code"><span>Invite code</span>NCURA2026</div>
+        <div class="narrate-card-note">Valid through November 30. A research study for adults 18 and older. Voluntary; no names or emails collected.</div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       Stories as Input: why this matters
+  ══════════════════════════════════════════════════════════════════ -->
+  <div class="slide bg-template" data-section="2" data-index="28">
+    <div class="content">
+      <div class="label">Section II · Prompt Injection Security</div>
+      <div class="heading" style="font-size:44px; margin-bottom:22px;">We talk in stories. So do the models, differently.</div>
+      <div class="narc-two-col">
+        <div class="narc-card" data-step>
+          <h3>How we communicate</h3>
+          <p>Stories, analogies, and metaphors pack a lot into a few words. &ldquo;Bob, being the jealous type&rdquo; tells you what Bob does next without saying it.</p>
+          <p>That is how we compress information and get it across quickly.</p>
+        </div>
+        <div class="narc-card" data-step style="border-top-color:#b06000;">
+          <h3>How the models read it</h3>
+          <p>They are getting better at this. Most models above followed the story they were given.</p>
+          <p>But not always the way a person would: the right ending in the wrong colors, or pages of reasoning and no answer. Ask twice, and you may get a different drawing.</p>
+        </div>
+      </div>
+      <div class="narc-callout" data-step style="margin-top:24px;">For security: an injected story doesn&rsquo;t have to look like a command. And you can&rsquo;t tell by reading it how a model will take it.</div>
     </div>
   </div>
 
   <!-- ══════════════════════════════════════════════════════════════
        Section Divider: Risk Classification
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="3" data-index="23">
+  <div class="slide bg-template" data-section="3" data-index="29">
     <div class="section-divider-wrap">
       <div>
         <div class="section-big-num" style="color:rgba(26,122,26,0.07);">03</div>
@@ -2853,7 +3354,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Interactive Question: Shadow AI
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="3" data-index="24">
+  <div class="slide bg-template" data-section="3" data-index="30">
     <div class="content">
       <div class="label">Interactive Question</div>
       <div class="heading" style="font-size:44px; margin-bottom:16px;">Who's the bigger shadow AI risk?</div>
@@ -2878,7 +3379,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Interactive: Classify Data Risk
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="3" data-index="25">
+  <div class="slide bg-template" data-section="3" data-index="31">
     <div class="content">
       <div class="label">Section III · Risk Classification</div>
       <div class="heading" style="font-size:46px; margin-bottom:6px;">Classify the Risk Level</div>
@@ -2992,7 +3493,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        One File, Many Kinds of Information
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="3" data-index="26">
+  <div class="slide bg-template" data-section="3" data-index="32">
     <div class="content">
       <div class="label">Section III · Risk Classification</div>
       <div class="heading" style="font-size:46px; margin-bottom:22px;">One File, Many Kinds of Information</div>
@@ -3054,7 +3555,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        AI Meeting Assistants
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="3" data-index="27">
+  <div class="slide bg-template" data-section="3" data-index="33">
     <div class="content">
       <div class="label">Section III · Risk Classification</div>
       <div class="heading" style="font-size:46px; margin-bottom:20px;">Is AI Listening to Your Meeting?</div>
@@ -3112,7 +3613,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Institutional Classification Labels
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="3" data-index="28">
+  <div class="slide bg-template" data-section="3" data-index="34">
     <div class="content">
       <div class="label">Section III · Risk Classification</div>
       <div class="heading" style="font-size:46px; margin-bottom:22px;">Every Institution Draws Its Own Lines</div>
@@ -3164,7 +3665,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Free vs. Approved Accounts
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="3" data-index="29">
+  <div class="slide bg-template" data-section="3" data-index="35">
     <div class="content">
       <div class="label">Section III · Risk Classification</div>
       <div class="quote-wrap">
@@ -3190,7 +3691,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Case Study: Arizona State University
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="3" data-index="30">
+  <div class="slide bg-template" data-section="3" data-index="36">
     <div class="content">
       <div class="label">Section III · Case Study</div>
       <div class="heading" style="font-size:46px; margin-bottom:22px;">How It Works at Arizona State University</div>
@@ -3251,7 +3752,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Decision Process: Four Questions
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="3" data-index="31">
+  <div class="slide bg-template" data-section="3" data-index="37">
     <div class="content">
       <div class="label">Section III · Risk Classification</div>
       <div class="heading" style="font-size:46px; margin-bottom:18px;">Four Questions Before You Upload</div>
@@ -3291,7 +3792,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Section III Takeaways
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="3" data-index="32">
+  <div class="slide bg-template" data-section="3" data-index="38">
     <div class="content">
       <div class="label">Section III · Takeaways</div>
       <div class="heading">What This Means for You</div>
@@ -3311,7 +3812,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Q & A
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="4" data-index="33">
+  <div class="slide bg-template" data-section="4" data-index="39">
     <div class="qa-wrap">
       <div class="qa-bg-mark">?</div>
       <div class="qa-label">Conclusion</div>
@@ -3330,7 +3831,7 @@
        QR (evaluation_survey.png) and bit.ly/3NwQpTi both open
        surveymonkey.com/r/AI4RAgeneral (from ui-insight/REACHWorkshop2026)
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="4" data-index="34">
+  <div class="slide bg-template" data-section="4" data-index="40">
     <div class="content">
       <div class="label">Before You Go</div>
       <div class="heading" style="margin-bottom:10px;">AI4RA External Evaluation</div>
@@ -3360,7 +3861,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        Contact Information
   ══════════════════════════════════════════════════════════════════ -->
-  <div class="slide bg-template" data-section="4" data-index="35">
+  <div class="slide bg-template" data-section="4" data-index="41">
     <div class="content">
       <div class="label">Thank You</div>
       <div class="heading">Get in Touch</div>
@@ -3414,6 +3915,9 @@
 <div id="counter">1 / 3</div>
 <div id="hint">← → arrow keys to navigate</div>
 
+<!-- narc-data:start -->
+<script type="application/json" id="narc-data">{"expected":9,"puzzles":{"chat":{"truth":[[5,0,7],[5,0,7],[5,0,7]],"grids":[{"model":"gpt-oss-120b","grid":[[0,0,0],[5,0,7],[5,0,7]]},{"model":"gpt-oss-20b","grid":[[0,0,0],[0,0,0],[0,0,0]]},{"model":"qwen3.5-122b","grid":[[5,0,0],[0,0,7],[5,0,7]]},{"model":"qwen3.6-27b","grid":[[0,0,0],[5,0,7],[5,0,7]]},{"model":"qwen3.8-27b","grid":[[0,0,0],[5,0,7],[5,0,7]]},{"model":"nemotron-3-super","grid":[[0,0,0],[6,0,4],[6,0,4]]},{"model":"gemma-4-26b","grid":[[1,0,0],[0,0,2],[1,0,2]]},{"model":"gemma-4-31b","grid":[[0,0,0],[6,0,2],[6,0,2]]},{"model":"kimi-k3","grid":[[5,0,0],[0,0,7],[5,0,7]]}],"happy":[{"model":"gpt-oss-120b","grid":[[5,0,7],[5,0,7],[5,0,7]]},{"model":"gpt-oss-20b","grid":[[0,0,0],[0,0,0],[0,0,0]]},{"model":"qwen3.5-122b","grid":[[5,0,7],[5,0,7],[5,0,7]]},{"model":"qwen3.6-27b","grid":[[5,0,8],[5,0,8],[5,0,8]]},{"model":"qwen3.8-27b","grid":[[5,0,7],[5,0,7],[5,0,7]]},{"model":"nemotron-3-super","grid":[[7,0,7],[7,0,7],[7,0,7]]},{"model":"gemma-4-26b","grid":[[5,0,2],[5,0,2],[5,0,2]]},{"model":"gemma-4-31b","grid":[[2,0,0],[2,0,2],[2,0,2]]},{"model":"kimi-k3","grid":[[5,0,7],[5,0,7],[5,0,7]]}],"sad":[{"model":"gpt-oss-120b","grid":[[5,0,0],[5,0,0],[5,0,7]]},{"model":"gpt-oss-20b","grid":[[0,0,0],[0,0,0],[0,0,0]]},{"model":"qwen3.5-122b","grid":[[5,0,0],[5,0,0],[5,0,7]]},{"model":"qwen3.6-27b","grid":[[5,0,0],[5,0,0],[5,0,7]]},{"model":"qwen3.8-27b","grid":[[5,0,0],[5,0,0],[5,0,7]]},{"model":"nemotron-3-super","grid":[[8,0,0],[8,0,4],[0,0,4]]},{"model":"gemma-4-26b","grid":[[5,0,0],[5,0,7],[0,0,7]]},{"model":"gemma-4-31b","grid":[[6,0,0],[6,0,0],[6,0,7]]},{"model":"kimi-k3","grid":[[5,0,0],[5,0,0],[5,0,7]]}]},"chat_2":{"truth":[[5,0,0],[5,0,0],[5,0,7]],"grids":[{"model":"gpt-oss-120b","grid":[[5,0,0],[5,0,7],[0,0,7]]},{"model":"gpt-oss-20b","grid":[[0,0,0],[0,0,0],[0,0,0]]},{"model":"qwen3.5-122b","grid":[[0,0,0],[5,0,7],[5,0,7]]},{"model":"qwen3.6-27b","grid":[[5,0,0],[0,0,7],[5,0,7]]},{"model":"qwen3.8-27b","grid":[[0,0,0],[5,0,7],[5,0,7]]},{"model":"nemotron-3-super","grid":[[5,0,0],[0,0,7],[5,0,7]]},{"model":"gemma-4-26b","grid":[[1,0,0],[0,0,2],[1,0,2]]},{"model":"gemma-4-31b","grid":[[0,0,0],[7,0,8],[7,0,8]]},{"model":"kimi-k3","grid":[[5,0,0],[0,0,7],[5,0,7]]}],"happy":[{"model":"gpt-oss-120b","grid":[[5,0,0],[5,0,4],[5,0,4]]},{"model":"gpt-oss-20b","grid":[[0,0,0],[0,0,0],[0,0,0]]},{"model":"qwen3.5-122b","grid":[[5,0,6],[5,0,6],[5,0,6]]},{"model":"qwen3.6-27b","grid":[[5,0,7],[5,0,7],[5,0,7]]},{"model":"qwen3.8-27b","grid":[[0,0,7],[5,0,7],[5,0,7]]},{"model":"nemotron-3-super","grid":[[0,0,4],[6,0,4],[6,0,4]]},{"model":"gemma-4-26b","grid":[[7,0,6],[7,0,6],[7,0,6]]},{"model":"gemma-4-31b","grid":[[4,0,4],[4,0,4],[4,0,4]]},{"model":"kimi-k3","grid":[[5,0,7],[5,0,7],[5,0,7]]}],"sad":[{"model":"gpt-oss-120b","grid":[[5,0,0],[5,0,0],[5,0,7]]},{"model":"gpt-oss-20b","grid":[[1,0,0],[1,0,0],[1,0,2]]},{"model":"qwen3.5-122b","grid":[[5,0,0],[5,0,0],[5,0,7]]},{"model":"qwen3.6-27b","grid":[[5,0,0],[5,0,0],[5,0,7]]},{"model":"qwen3.8-27b","grid":[[5,0,0],[5,0,0],[5,0,7]]},{"model":"nemotron-3-super","grid":[[5,0,0],[0,0,7],[5,0,7]]},{"model":"gemma-4-26b","grid":[[5,0,0],[5,0,0],[5,0,3]]},{"model":"gemma-4-31b","grid":[[5,0,0],[5,0,0],[5,0,7]]},{"model":"kimi-k3","grid":[[5,0,0],[5,0,0],[5,0,7]]}]}},"compliance":{"ncura-1_rev":{"mask-2":{"grids":[{"model":"gpt-oss-120b","ok":0},{"model":"gpt-oss-20b","ok":0},{"model":"qwen3.5-122b","ok":0},{"model":"qwen3.6-27b","ok":0},{"model":"qwen3.8-27b","ok":0},{"model":"nemotron-3-super","ok":0},{"model":"gemma-4-26b","ok":0},{"model":"gemma-4-31b","ok":0},{"model":"kimi-k3","ok":0}],"story":[{"model":"gpt-oss-120b","ok":0},{"model":"gpt-oss-20b","ok":0},{"model":"qwen3.5-122b","ok":0},{"model":"qwen3.6-27b","ok":0},{"model":"qwen3.8-27b","ok":0},{"model":"nemotron-3-super","ok":0},{"model":"gemma-4-26b","ok":0},{"model":"gemma-4-31b","ok":0},{"model":"kimi-k3","ok":0}],"narc":[]},"mask-4":{"grids":[{"model":"gpt-oss-120b","ok":0},{"model":"gpt-oss-20b","ok":0},{"model":"qwen3.5-122b","ok":1},{"model":"qwen3.6-27b","ok":0},{"model":"qwen3.8-27b","ok":0},{"model":"nemotron-3-super","ok":0},{"model":"gemma-4-26b","ok":0},{"model":"gemma-4-31b","ok":0},{"model":"kimi-k3","ok":0}],"story":[{"model":"gpt-oss-120b","ok":0},{"model":"gpt-oss-20b","ok":0},{"model":"qwen3.5-122b","ok":0},{"model":"qwen3.6-27b","ok":0},{"model":"qwen3.8-27b","ok":0},{"model":"nemotron-3-super","ok":0},{"model":"gemma-4-26b","ok":0},{"model":"gemma-4-31b","ok":0},{"model":"kimi-k3","ok":0}],"narc":[]},"mask-6":{"grids":[{"model":"gpt-oss-120b","ok":0},{"model":"gpt-oss-20b","ok":0},{"model":"qwen3.5-122b","ok":1},{"model":"qwen3.6-27b","ok":1},{"model":"qwen3.8-27b","ok":1},{"model":"nemotron-3-super","ok":0},{"model":"gemma-4-26b","ok":0},{"model":"gemma-4-31b","ok":0},{"model":"kimi-k3","ok":1}],"story":[{"model":"gpt-oss-120b","ok":1},{"model":"gpt-oss-20b","ok":0},{"model":"qwen3.5-122b","ok":1},{"model":"qwen3.6-27b","ok":1},{"model":"qwen3.8-27b","ok":1},{"model":"nemotron-3-super","ok":1},{"model":"gemma-4-26b","ok":0},{"model":"gemma-4-31b","ok":0},{"model":"kimi-k3","ok":1}],"narc":["gpt-oss-120b","nemotron-3-super"]},"mask-7":{"grids":[{"model":"gpt-oss-120b","ok":0},{"model":"gpt-oss-20b","ok":0},{"model":"qwen3.5-122b","ok":1},{"model":"qwen3.6-27b","ok":0},{"model":"qwen3.8-27b","ok":0},{"model":"nemotron-3-super","ok":0},{"model":"gemma-4-26b","ok":0},{"model":"gemma-4-31b","ok":0},{"model":"kimi-k3","ok":0}],"story":[{"model":"gpt-oss-120b","ok":0},{"model":"gpt-oss-20b","ok":0},{"model":"qwen3.5-122b","ok":0},{"model":"qwen3.6-27b","ok":1},{"model":"qwen3.8-27b","ok":0},{"model":"nemotron-3-super","ok":0},{"model":"gemma-4-26b","ok":0},{"model":"gemma-4-31b","ok":0},{"model":"kimi-k3","ok":0}],"narc":["qwen3.6-27b"]},"original":{"grids":[{"model":"gpt-oss-120b","ok":0},{"model":"gpt-oss-20b","ok":0},{"model":"qwen3.5-122b","ok":0},{"model":"qwen3.6-27b","ok":0},{"model":"qwen3.8-27b","ok":0},{"model":"nemotron-3-super","ok":0},{"model":"gemma-4-26b","ok":0},{"model":"gemma-4-31b","ok":0},{"model":"kimi-k3","ok":0}],"story":[{"model":"gpt-oss-120b","ok":0},{"model":"gpt-oss-20b","ok":0},{"model":"qwen3.5-122b","ok":0},{"model":"qwen3.6-27b","ok":0},{"model":"qwen3.8-27b","ok":0},{"model":"nemotron-3-super","ok":0},{"model":"gemma-4-26b","ok":0},{"model":"gemma-4-31b","ok":0},{"model":"kimi-k3","ok":0}],"narc":[]}},"ncura-2":{"mask-6":{"grids":[],"story":[],"narc":[]},"mask-7":{"grids":[],"story":[],"narc":[]},"original":{"grids":[{"model":"gpt-oss-120b","ok":0},{"model":"gpt-oss-20b","ok":0},{"model":"qwen3.5-122b","ok":0},{"model":"qwen3.6-27b","ok":0},{"model":"qwen3.8-27b","ok":0},{"model":"nemotron-3-super","ok":0},{"model":"gemma-4-26b","ok":0},{"model":"gemma-4-31b","ok":0},{"model":"kimi-k3","ok":0}],"story":[{"model":"gpt-oss-120b","ok":0},{"model":"gpt-oss-20b","ok":0},{"model":"qwen3.5-122b","ok":0},{"model":"qwen3.6-27b","ok":0},{"model":"qwen3.8-27b","ok":0},{"model":"nemotron-3-super","ok":0},{"model":"gemma-4-26b","ok":0},{"model":"gemma-4-31b","ok":0},{"model":"kimi-k3","ok":0}],"narc":[]}}},"source":"narc.insight.uidaho.edu AI Review runs (newest answered trial per model, original mask)","as_of":"October 22, 2026 20:55 UTC"}</script>
+<!-- narc-data:end -->
 <script>
   /* ── Scaling ─────────────────────────────────────────────────── */
   const stage = document.getElementById('stage');
@@ -3765,6 +4269,112 @@
 
     reset();
   })();
+
+  /* ── Stories as Input (NARC puzzles) ─────────────────────────── */
+  /* Colors as drawn on narc.insight.uidaho.edu; results from #narc-data */
+  const NARC_PALETTE = ['#000000', '#0074D9', '#FF4136', '#2ECC40', '#FFDC00',
+                        '#AAAAAA', '#F012BE', '#FF851B', '#7FDBFF', '#870C25'];
+  const NARC = JSON.parse(document.getElementById('narc-data').textContent);
+
+  function drawGrid(el, rows) {
+    el.innerHTML = '';
+    el.style.gridTemplateColumns = `repeat(${rows[0].length}, var(--cell))`;
+    rows.forEach(row => row.forEach(v => {
+      const cell = document.createElement('div');
+      cell.className = 'narc-cell';
+      cell.style.background = NARC_PALETTE[v] || '#000';
+      el.appendChild(cell);
+    }));
+  }
+
+  const sameGrid = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+  // An all-black grid is what the answer reader fills in when a model never settles on one
+  const isBlank  = g => !g || g.every(row => row.every(v => v === 0));
+
+  /* Identical drawings grouped, most common first; non-answers last */
+  function groupDrawings(runs) {
+    const groups = [];
+    runs.forEach(r => {
+      const blank = isBlank(r.grid);
+      const key = blank ? 'blank' : JSON.stringify(r.grid);
+      let g = groups.find(x => x.key === key);
+      if (!g) { g = { key, grid: r.grid, blank, models: [] }; groups.push(g); }
+      g.models.push(r.model);
+    });
+    return groups.sort((a, b) => (a.blank - b.blank) || (b.models.length - a.models.length));
+  }
+
+  document.querySelectorAll('.narc-grid[data-grid]').forEach(el => drawGrid(el, JSON.parse(el.dataset.grid)));
+  document.querySelectorAll('.narc-grid[data-truth]').forEach(el => drawGrid(el, NARC.puzzles[el.dataset.truth].truth));
+
+  document.querySelectorAll('.story-opts').forEach(opts => {
+    const p = NARC.puzzles[opts.dataset.puzzle];
+    opts.querySelectorAll('.story-opt').forEach(opt => {
+      const box = opt.querySelector('.story-drawn');
+      const runs = p[opt.querySelector('.story-btn').dataset.cond];
+      if (runs.length < NARC.expected) {
+        box.insertAdjacentHTML('beforeend', `<div class="drawn-pending">${runs.length
+          ? `Results so far: ${runs.length} of ${NARC.expected} models`
+          : 'Results pending'}</div>`);
+      }
+      groupDrawings(runs).forEach(g => {
+        const right = !g.blank && sameGrid(g.grid, p.truth);
+        const n = g.models.length;
+        const div = document.createElement('div');
+        div.className = 'drawn-group ' + (g.blank ? 'is-blank is-wrong' : right ? 'is-right' : 'is-wrong');
+        div.title = g.models.join(', ');
+        const grid = document.createElement('div');
+        grid.className = 'narc-grid';
+        drawGrid(grid, g.blank ? p.truth.map(row => row.map(() => 0)) : g.grid);
+        div.appendChild(grid);
+        div.insertAdjacentHTML('beforeend',
+          `<div class="drawn-count">${n} ${n === 1 ? 'model' : 'models'}${g.blank ? ', no answer' : ''}</div>`
+          + `<div class="drawn-mark">${right ? '✓ right' : '✗ wrong'}</div>`);
+        box.appendChild(div);
+      });
+    });
+  });
+
+  function storyPick(btn) { btn.classList.toggle('is-picked'); }
+
+  document.querySelectorAll('td[data-narc-count]').forEach(td => {
+    const [pid, cond] = td.dataset.narcCount.split(':');
+    const p = NARC.puzzles[pid];
+    if (!p[cond].length) { td.innerHTML = 'pending<small>results not in yet</small>'; return; }
+    const right = p[cond].filter(r => sameGrid(r.grid, p.truth)).length;
+    const soFar = p[cond].length < NARC.expected ? ' so far' : '';
+    td.innerHTML = `${right} of ${p[cond].length}<small>models drew it exactly${soFar}</small>`;
+    if (right > 0) td.classList.add('hit');
+  });
+
+  /* Compliance puzzles: the site's verdicts per mask (pictures only / with the story / needed the story) */
+  const COMP = NARC.compliance || {};
+  const nOk = runs => runs.filter(r => r.ok).length;
+  const compCell = key => { const [pid, mask] = key.split(':'); return (COMP[pid] || {})[mask]; };
+
+  document.querySelectorAll('[data-narc-comp]').forEach(el => {
+    const c = compCell(el.dataset.narcComp);
+    if (!c || !c.story.length) { el.textContent = 'model results pending.'; return; }
+    const g = nOk(c.grids), st = nOk(c.story), n = c.story.length;
+    el.textContent = (g === 0 && st === 0)
+      ? `none of the ${n} models drew them, with or without the story.`
+      : `${g} of ${c.grids.length} models drew them from the pictures alone, ${st} of ${n} with the story.`;
+  });
+
+  document.querySelectorAll('td[data-narc-comp-count]').forEach(td => {
+    const parts = td.dataset.narcCompCount.split(':');
+    const c = compCell(parts[0] + ':' + parts[1]);
+    const runs = c ? c[parts[2]] : [];
+    if (!runs || !runs.length) { td.innerHTML = 'pending<small>results not in yet</small>'; return; }
+    const k = nOk(runs);
+    td.innerHTML = `${k} of ${runs.length}<small>models drew it exactly</small>`;
+    if (k > 0) td.classList.add('hit');
+  });
+
+  document.querySelectorAll('td[data-narc-comp-names]').forEach(td => {
+    const c = compCell(td.dataset.narcCompNames);
+    td.textContent = !c ? 'pending' : (c.narc.length ? c.narc.join(', ') : 'no model');
+  });
 
   /* ── Init ────────────────────────────────────────────────────── */
   updateChrome();
